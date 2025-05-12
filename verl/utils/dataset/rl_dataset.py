@@ -15,6 +15,7 @@
 # limitations under the License.
 
 import copy
+import json
 import logging
 import os
 import re
@@ -262,3 +263,52 @@ class RLHFDataset(Dataset):
             return state
 
         return self.__dict__.copy()
+
+
+class RLHFAgentDataset(Dataset):
+    def __init__(self,
+        data_files: Union[str, List[str]],
+        tokenizer: PreTrainedTokenizer,
+        processor = None, # Compatible with verl
+        config = None # Compatible with verl
+    ):
+        # print(f'data_files: {data_files}')
+        self.tokenizer = tokenizer
+        self.data_files = copy.deepcopy(data_files)
+        self.data = []
+        self.sources = []
+        self.truncation = "error"
+        if isinstance(self.data_files, str):
+            self.data_files = [self.data_files]
+        for i, data_file in enumerate(self.data_files):
+            self.data.extend(json.load(open(data_file)))
+            file_name = os.path.basename(data_file)
+            self.sources.extend([file_name] * len(json.load(open(data_file))))
+
+    def __len__(self):
+        return len(self.data)
+    
+    def __getitem__(self, item):
+        row_dict = self.data[item]
+        question = row_dict['question']
+        answer = row_dict['answer']
+        messages = {
+            "messages": [
+                {"role": "user", "content": question}
+            ],
+            "question": question,
+            "answer": answer
+        }
+        row_dict["messages"] = messages
+        row_dict["data_source"] = self.sources[item]
+        row_dict["question"] = question
+        # May be for compatibility with the original dataset
+        # And we don't actually need this
+        # inputs = self.tokenizer(question, return_tensors='pt')
+        # row_dict["input_ids"] = inputs.input_ids
+        # row_dict["attention_mask"] = inputs.attention_mask
+        row_dict["input_ids"] = torch.tensor([0])
+        row_dict["attention_mask"] = torch.tensor([1])
+        row_dict["position_ids"] = torch.tensor([0])
+        
+        return row_dict
