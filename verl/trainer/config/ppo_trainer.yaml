@@ -1,11 +1,25 @@
+agent:
+  use_agent: True
+  agent_type: "code"
+  model_name_or_path: null
+  template: qwen-7b-chat
+  tools: 
+    - google_search
+    - answer
+  reward_name: "qa_f1_reward"
+  backend: "async_verl"
+  max_steps: 10
+  num_chains: 5
+  log_file: null
+
 data:
   tokenizer: null
   train_files: ~/data/rlhf/gsm8k/train.parquet
   val_files: ~/data/rlhf/gsm8k/test.parquet
   prompt_key: prompt
   reward_fn_key: data_source
-  max_prompt_length: 512
-  max_response_length: 512
+  max_prompt_length: 8192
+  max_response_length: 8192
   train_batch_size: 1024
   val_batch_size: null
   return_raw_input_ids: False  # This should be set to true when the tokenizer between policy and rm differs
@@ -87,8 +101,8 @@ actor_rollout_ref:
     ulysses_sequence_parallel_size: ${actor_rollout_ref.actor.ulysses_sequence_parallel_size} # sp size
   rollout:
     name: vllm
-    mode: sync # sync: LLM, async: AsyncLLM
-    chat_scheduler: null # async chat scheduler, e.g examples.ppo_trainer.naive_chat_scheduler.NaiveChatCompletionScheduler
+    mode: async # sync: LLM, async: AsyncLLM
+    chat_scheduler: examples.ppo_trainer.naive_completion_scheduler.NaiveCompletionScheduler # async chat scheduler, e.g examples.ppo_trainer.naive_chat_scheduler.NaiveChatCompletionScheduler
     temperature: 1.0
     top_k: -1 # 0 for hf rollout, -1 for vllm rollout
     top_p: 1

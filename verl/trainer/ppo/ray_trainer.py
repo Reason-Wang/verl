@@ -17,6 +17,7 @@
 FSDP PPO Trainer with Ray-based single controller.
 This trainer supports model-agonistic model initialization with huggingface
 """
+import asyncio
 import sys
 sys.path.append("../agents")
 import json
@@ -53,7 +54,6 @@ from verl.trainer.ppo.metric_utils import (
     compute_timing_metrics,
     process_validation_metrics,
 )
-from verl.utils.dataset.rl_dataset import RLHFDatasetAgent, collate_fn
 from verl.trainer.ppo.reward import compute_reward, compute_reward_async
 from verl.utils.checkpoint.checkpoint_manager import find_latest_ckpt_path
 from verl.utils.metric import (
@@ -576,7 +576,8 @@ class RayPPOTrainer:
             sample_inputs.extend(input_texts)
 
             batch_keys_to_pop = ["input_ids", "attention_mask", "position_ids"]
-            non_tensor_batch_keys_to_pop = ["raw_prompt_ids"]
+            # non_tensor_batch_keys_to_pop = ["raw_prompt_ids"]
+            non_tensor_batch_keys_to_pop = ["messages", "question", "data_source"]
             if "multi_modal_inputs" in test_batch.non_tensor_batch:
                 non_tensor_batch_keys_to_pop.extend(["multi_modal_data", "multi_modal_inputs"])
             if "raw_prompt" in test_batch.non_tensor_batch:
@@ -600,20 +601,22 @@ class RayPPOTrainer:
 
             # pad to be divisible by dp_size
             # test_gen_batch_padded, pad_size = pad_dataproto_to_divisor(test_gen_batch, self.actor_rollout_wg.world_size)
-            # if not self.async_rollout_mode:
-            #     test_output_gen_batch_padded = self.actor_rollout_wg.generate_sequences(test_gen_batch_padded)
-            # else:
-            #     self.async_rollout_manager.wake_up()
-            #     test_output_gen_batch_padded = self.async_rollout_manager.generate_sequences(test_gen_batch_padded)
-            #     self.async_rollout_manager.sleep()
+            if not self.async_rollout_mode:
+                # test_output_gen_batch_padded = self.actor_rollout_wg.generate_sequences(test_gen_batch_padded)
+                pass
+            else:
+                self.async_rollout_manager.wake_up()
+                # test_output_gen_batch_padded = self.async_rollout_manager.generate_sequences(test_gen_batch_padded)
+                self.agent_wrapper.set_llm_engine(self.async_rollout_manager, self.tokenizer)
+                asyncio.run(self.agent_wrapper.run_async(max_steps=self.config.agent.max_steps, start_messages=test_gen_batch.non_tensor_batch['messages'], num_chains=1))
+                test_output_gen_batch = self.agent_wrapper.get_verl_data_proto()
+                self.async_rollout_manager.sleep()
 
             # # unpad
             # test_output_gen_batch = unpad_dataproto(test_output_gen_batch_padded, pad_size=pad_size)
             # print("validation generation end")
 
-            self.agent_wrapper.set_llm_engine(self.actor_rollout_wg, self.tokenizer)
-            self.agent_wrapper.run_async(max_steps=self.config.agent.max_steps, start_messages=test_gen_batch.non_tensor_batch['messages'], num_chains=1)
-            test_output_gen_batch = self.agent_wrapper.get_verl_data_proto()
+
 
             # Store generated outputs
             # output_ids = test_output_gen_batch.batch["responses"]
@@ -894,11 +897,11 @@ class RayPPOTrainer:
 
                 # pop those keys for generation
                 batch_keys_to_pop = ["input_ids", "attention_mask", "position_ids"]
-                non_tensor_batch_keys_to_pop = ["raw_prompt_ids", "messages"]
+                non_tensor_batch_keys_to_pop = ["messages"]
                 if "multi_modal_inputs" in batch.non_tensor_batch:
                     non_tensor_batch_keys_to_pop.extend(["multi_modal_data", "multi_modal_inputs"])
-                if "raw_prompt" in batch.non_tensor_batch:
-                    non_tensor_batch_keys_to_pop.append("raw_prompt")
+                # if "raw_prompt" in batch.non_tensor_batch:
+                #     non_tensor_batch_keys_to_pop.append("raw_prompt")
                 if "tools_kwargs" in batch.non_tensor_batch:
                     non_tensor_batch_keys_to_pop.append("tools_kwargs")
                 gen_batch = batch.pop(
@@ -911,15 +914,17 @@ class RayPPOTrainer:
                 with _timer("step", timing_raw):
                     # generate a batch
                     with _timer("gen", timing_raw):
-                        # if not self.async_rollout_mode:
-                        #     gen_batch_output = self.actor_rollout_wg.generate_sequences(gen_batch)
-                        # else:
-                        #     self.async_rollout_manager.wake_up()
-                        #     gen_batch_output = self.async_rollout_manager.generate_sequences(gen_batch)
-                        #     self.async_rollout_manager.sleep()
-                        self.agent_wrapper.set_llm_engine(self.actor_rollout_wg, self.tokenizer)
-                        self.agent_wrapper.run_async(max_steps=self.config.agent.max_setps, start_messages=gen_batch.non_tensor_batch["messages"], num_chains=self.config.agent.num_chains)
-                        gen_batch_output = self.agent_wrapper.get_verl_data_proto()
+                        if not self.async_rollout_mode:
+                            gen_batch_output = self.actor_rollout_wg.generate_sequences(gen_batch)
+                        else:
+                            self.async_rollout_manager.wake_up()
+                            # gen_batch_output = self.async_rollout_manager.generate_sequences(gen_batch)
+
+                            self.agent_wrapper.set_llm_engine(self.async_rollout_manager, self.tokenizer)
+                            # Async agent rollout
+                            asyncio.run(self.agent_wrapper.run_async(max_steps=self.config.agent.max_setps, start_messages=gen_batch.non_tensor_batch["messages"], num_chains=self.config.agent.num_chains))
+                            gen_batch_output = self.agent_wrapper.get_verl_data_proto()
+                            self.async_rollout_manager.sleep()
 
                     if self.config.algorithm.adv_estimator == AdvantageEstimator.REMAX:
                         with _timer("gen_max", timing_raw):
