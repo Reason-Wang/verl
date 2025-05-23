@@ -306,7 +306,7 @@ class DataParallelPPOActor(BasePPOActor):
                     #     response_mask = attention_mask[:, -response_length:]
 
                     old_log_prob = data["old_log_probs"]
-                    advantages = data["advantages"][:, -1] # TODO: check whether [:, :-1] or [:, 1:]
+                    advantages = data["advantages"][:, :-1] # TODO: check whether [:, :-1] or [:, 1:]
                     action_mask = data['action_mask'][:, :-1]
 
                     clip_ratio = self.config.clip_ratio

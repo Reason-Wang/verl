@@ -77,9 +77,9 @@ class NaiveCompletionScheduler(CompletionScheduler):
                 )
             )
         await asyncio.gather(*tasks)
-        print("[NaiveCompletionScheduler] generate_sequences done")
+        # print("[NaiveCompletionScheduler] generate_sequences done")
 
-        print(f"[NaiveCompletionScheduler] Batch completions: {batch_completions[0]}")
+        # print(f"[NaiveCompletionScheduler] Batch completions: {batch_completions[0]}")
 
         return self._postprocess(batch, batch_completions, n=kwargs["n"])
 

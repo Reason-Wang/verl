@@ -19,6 +19,7 @@ This trainer supports model-agonistic model initialization with huggingface
 """
 import asyncio
 import sys
+import threading
 sys.path.append("../agents")
 import json
 import os
@@ -214,7 +215,7 @@ def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, num_re
     elif adv_estimator == AdvantageEstimator.REINFORCE_PLUS_PLUS_BASELINE:
         advantages, returns = core_algos.compute_reinforce_plus_plus_baseline_outcome_advantage(
             token_level_rewards=data.batch["token_level_rewards"],
-            response_mask=data.batch["response_mask"],
+            response_mask=data.batch["action_mask"],
             index=data.non_tensor_batch["uid"],
         )
         data.batch["advantages"] = advantages
@@ -222,7 +223,7 @@ def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, num_re
     elif adv_estimator == AdvantageEstimator.REINFORCE_PLUS_PLUS:
         advantages, returns = core_algos.compute_reinforce_plus_plus_outcome_advantage(
             token_level_rewards=data.batch["token_level_rewards"],
-            response_mask=data.batch["response_mask"],
+            response_mask=data.batch["action_mask"],
             gamma=gamma,
         )
         data.batch["advantages"] = advantages
@@ -231,7 +232,7 @@ def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, num_re
         advantages, returns = core_algos.compute_remax_outcome_advantage(
             token_level_rewards=data.batch["token_level_rewards"],
             reward_baselines=data.batch["reward_baselines"],
-            response_mask=data.batch["response_mask"],
+            response_mask=data.batch["action_mask"],
         )
 
         data.batch["advantages"] = advantages
@@ -239,7 +240,7 @@ def compute_advantage(data: DataProto, adv_estimator, gamma=1.0, lam=1.0, num_re
     elif adv_estimator == AdvantageEstimator.RLOO:
         advantages, returns = core_algos.compute_rloo_outcome_advantage(
             token_level_rewards=data.batch["token_level_rewards"],
-            response_mask=data.batch["response_mask"],
+            response_mask=data.batch["action_mask"],
             index=data.non_tensor_batch["uid"],
         )
         data.batch["advantages"] = advantages
@@ -608,7 +609,7 @@ class RayPPOTrainer:
                 self.async_rollout_manager.wake_up()
                 # test_output_gen_batch_padded = self.async_rollout_manager.generate_sequences(test_gen_batch_padded)
                 self.agent_wrapper.set_llm_engine(self.async_rollout_manager, self.tokenizer)
-                asyncio.run(self.agent_wrapper.run_async(max_steps=self.config.agent.max_steps, start_messages=test_gen_batch.non_tensor_batch['messages'], num_chains=1))
+                self.run_on_bg(self.agent_wrapper.run_async(max_steps=self.config.agent.max_steps, start_messages=test_gen_batch.non_tensor_batch['messages'], num_chains=1))
                 test_output_gen_batch = self.agent_wrapper.get_verl_data_proto()
                 self.async_rollout_manager.sleep()
 
@@ -748,11 +749,26 @@ class RayPPOTrainer:
         self.async_rollout_mode = False
         if self.config.actor_rollout_ref.rollout.mode == "async":
             self.async_rollout_mode = True
+            self.bg_loop = asyncio.new_event_loop()
+            self.bg_thread = threading.Thread(
+                target=self.start_background_loop, args=(self.bg_loop,), daemon=True
+            )
+            self.bg_thread.start()
             self.async_rollout_manager = AsyncLLMServerManager(
                 config=self.config.actor_rollout_ref,
                 worker_group=self.actor_rollout_wg,
+                loop=self.bg_loop,
             )
 
+    # Set a background loop for all asyncio operations
+    def start_background_loop(self, loop: asyncio.AbstractEventLoop):
+        asyncio.set_event_loop(loop)          # bind to this thread
+        loop.run_forever()
+    
+    def run_on_bg(self, coro):
+        future = asyncio.run_coroutine_threadsafe(coro, self.bg_loop)
+        return future.result()
+    
     def _save_checkpoint(self):
         # path: given_path + `/global_step_{global_steps}` + `/actor`
         local_global_step_folder = os.path.join(self.config.trainer.default_local_dir, f"global_step_{self.global_steps}")
@@ -922,7 +938,7 @@ class RayPPOTrainer:
 
                             self.agent_wrapper.set_llm_engine(self.async_rollout_manager, self.tokenizer)
                             # Async agent rollout
-                            asyncio.run(self.agent_wrapper.run_async(max_steps=self.config.agent.max_setps, start_messages=gen_batch.non_tensor_batch["messages"], num_chains=self.config.agent.num_chains))
+                            self.run_on_bg(self.agent_wrapper.run_async(max_steps=self.config.agent.max_steps, start_messages=gen_batch.non_tensor_batch["messages"], num_chains=self.config.agent.num_chains))
                             gen_batch_output = self.agent_wrapper.get_verl_data_proto()
                             self.async_rollout_manager.sleep()
 
@@ -944,7 +960,7 @@ class RayPPOTrainer:
 
                     # batch.non_tensor_batch["uid"] = np.array([str(uuid.uuid4()) for _ in range(len(batch.batch))], dtype=object)
                     # repeat to align with repeated responses in rollout
-                    batch = batch.repeat(repeat_times=self.config.num_chains, interleave=False)
+                    batch = batch.repeat(repeat_times=self.config.agent.num_chains, interleave=False)
                     batch = batch.union(gen_batch_output)
 
                     # batch.batch["response_mask"] = compute_response_mask(batch)
@@ -1021,7 +1037,6 @@ class RayPPOTrainer:
                             lam=self.config.algorithm.lam,
                             num_repeat=self.config.actor_rollout_ref.rollout.n,
                             norm_adv_by_std_in_grpo=norm_adv_by_std_in_grpo,
-                            multi_turn=self.config.actor_rollout_ref.rollout.multi_turn.enable,
                         )
 
                     # update critic

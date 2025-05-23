@@ -61,10 +61,13 @@ def _compute_response_info(batch: DataProto) -> Dict[str, Any]:
             - prompt_length: Tensor of prompt lengths for each item in the batch
             - response_length: Tensor of response lengths for each item in the batch
     """
-    response_length = batch.batch["responses"].shape[-1]
+    # response_length = batch.batch["responses"].shape[-1]
 
-    prompt_mask = batch.batch["attention_mask"][:, :-response_length]
-    response_mask = batch.batch["attention_mask"][:, -response_length:]
+    # prompt_mask = batch.batch["attention_mask"][:, :-response_length]
+    # response_mask = batch.batch["attention_mask"][:, -response_length:]
+    action_mask = batch.batch["action_mask"]
+    prompt_mask = action_mask == 0
+    response_mask = action_mask == 1
 
     prompt_length = prompt_mask.sum(-1).float()
     response_length = response_mask.sum(-1).float()  # (batch_size,)
@@ -105,12 +108,18 @@ def compute_data_metrics(batch: DataProto, use_critic: bool = True) -> Dict[str,
     advantages = batch.batch["advantages"]
     returns = batch.batch["returns"]
 
-    max_response_length = batch.batch["responses"].shape[-1]
+    # We need to adapt all metrics to multi-turn manner
 
-    prompt_mask = batch.batch["attention_mask"][:, :-max_response_length].bool()
-    response_mask = batch.batch["attention_mask"][:, -max_response_length:].bool()
+    # prompt_mask = batch.batch["attention_mask"][:, :-max_response_length].bool()
+    # response_mask = batch.batch["attention_mask"][:, -max_response_length:].bool()
+    action_mask = batch.batch["action_mask"]
+    prompt_mask = action_mask == 0
+    response_mask = action_mask == 1
 
-    max_prompt_length = prompt_mask.size(-1)
+
+    max_response_length = response_mask.sum(-1).max()
+    
+    max_prompt_length = prompt_mask.sum(-1).max()
 
     response_info = _compute_response_info(batch)
     prompt_length = response_info["prompt_length"]

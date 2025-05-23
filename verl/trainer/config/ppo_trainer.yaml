@@ -8,7 +8,7 @@ agent:
     - answer
   reward_name: "qa_f1_reward"
   backend: "async_verl"
-  max_steps: 10
+  max_steps: 4
   num_chains: 5
   log_file: null
 

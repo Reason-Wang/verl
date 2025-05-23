@@ -199,12 +199,12 @@ class CompletionScheduler:
             # TODO: OpenAI client uses httpx, seems to have performance issue in high concurrency requests.
             completions = await self._completions_openai(address, **complete_request)
             if not self.debug_has_printed:
-                print(f"[CompletionScheduler] _completions_openai completions: {completions}")
+                # print(f"[CompletionScheduler] _completions_openai completions: {completions}")
                 self.debug_has_printed = True
         except Exception as e:
             # Let user handle the exception
             # print(f"[CompletionScheduler] _completions_openai exception: {e}")
-            raise RuntimeError(f"[CompletionScheduler] _completions_openai exception: {e}")
+            # raise RuntimeError(f"[CompletionScheduler] _completions_openai exception: {e}")
             exception = e
 
         await callback(completions, callback_additional_info, exception)
@@ -358,7 +358,7 @@ class ChatCompletionScheduler:
 class AsyncLLMServerManager:
     """AsyncLLMServerManager manage a group of vllm instances, i.e AsyncvLLMServer."""
 
-    def __init__(self, config: DictConfig, worker_group: RayWorkerGroup, *, scheduler_kwargs: Dict[str, Any] = None):
+    def __init__(self, config: DictConfig, worker_group: RayWorkerGroup, *, scheduler_kwargs: Dict[str, Any] = None, loop: asyncio.AbstractEventLoop = None):
         """Initialize AsyncLLMServerManager.
 
         Args:
@@ -414,15 +414,21 @@ class AsyncLLMServerManager:
 
         # Init user provided chat scheduler in sperate thread.
         self.chat_scheduler: ChatCompletionScheduler | CompletionScheduler = None
-        self.chat_scheduler_loop = None
+        self.chat_scheduler_loop = loop
         self.chat_scheduler_ready = threading.Event()
         self.chat_scheduler_thread = threading.Thread(target=self._init_chat_scheduler, daemon=True)
         self.chat_scheduler_thread.start()
         self.chat_scheduler_ready.wait()
 
     def _init_chat_scheduler(self):
-        self.chat_scheduler_loop = asyncio.new_event_loop()
-        asyncio.set_event_loop(self.chat_scheduler_loop)
+        # self.chat_scheduler_loop = asyncio.new_event_loop()
+        # self.chat_scheduler_loop = asyncio.get_running_loop()
+        set_new_loop = False
+        if self.chat_scheduler_loop is None:
+            self.chat_scheduler_loop = asyncio.new_event_loop()
+            set_new_loop = True
+        else:
+            asyncio.set_event_loop(self.chat_scheduler_loop)
 
         module_path, class_name = self.config.rollout.chat_scheduler.rsplit(".", 1)
         module = importlib.import_module(module_path)
@@ -433,9 +439,9 @@ class AsyncLLMServerManager:
             server_addresses=self.server_addresses,
             **self.scheduler_kwargs,
         )
-
         self.chat_scheduler_ready.set()
-        self.chat_scheduler_loop.run_forever()
+        if set_new_loop:
+            self.chat_scheduler_loop.run_forever()
 
     def wake_up(self):
         """Wake up all vllm instances."""
