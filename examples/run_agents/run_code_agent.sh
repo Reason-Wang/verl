@@ -32,7 +32,7 @@ model=Qwen/Qwen2.5-3B-Instruct
 lr=5e-7
 length=512
 batch_size=128
-num_chains=8
+num_chains=4
 kl_coef=0.001
 train_dataset="orz_math_57k_train"
 # adv_estimator=rloo
@@ -97,4 +97,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
     trainer.total_training_steps=$total_training_steps \
-    trainer.val_before_train=True
+    trainer.val_before_train=False
