@@ -49,11 +49,14 @@ class NaiveCompletionScheduler(CompletionScheduler):
 
         async def callback(completions: Completion, info: Dict[str, Any], exception: Exception):
             # Don't do anything for completion
-            batch_completions, batch_index = info["batch_completions"], info["batch_index"]
+            batch_completions, batch_index, batch_size = info["batch_completions"], info["batch_index"], info["batch_size"]
             responses = []
-            for choice in completions.choices:
-                batch_completions[batch_index] = choice.text
-                responses.append(choice.text)
+            if completions:
+                for choice in completions.choices:
+                    batch_completions[batch_index] = choice.text
+                    responses.append(choice.text)
+            else:
+                responses = [""] * batch_size
 
             batch_completions[batch_index] = responses
 
@@ -69,6 +72,7 @@ class NaiveCompletionScheduler(CompletionScheduler):
                         callback_additional_info={
                             "batch_completions": batch_completions,
                             "batch_index": batch_index,
+                            "batch_size": len(batch_completions),
                         },
                         model=self.model_name,
                         prompt=prompt,
@@ -77,9 +81,6 @@ class NaiveCompletionScheduler(CompletionScheduler):
                 )
             )
         await asyncio.gather(*tasks)
-        # print("[NaiveCompletionScheduler] generate_sequences done")
-
-        # print(f"[NaiveCompletionScheduler] Batch completions: {batch_completions[0]}")
 
         return self._postprocess(batch, batch_completions, n=kwargs["n"])
 

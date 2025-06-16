@@ -1,5 +1,5 @@
 export WANDB_API_KEY="4249b9601c17643f728a468e1cf998095af899cd"
-
+export VLLM_USE_V1=1
 # Run in single node
 
 set -x
@@ -33,7 +33,7 @@ model=Qwen/Qwen2.5-3B-Instruct
 lr=5e-7
 length=512
 batch_size=128
-num_chains=16
+num_chains=4
 kl_coef=0.001
 train_dataset="orz_math_57k_train"
 # adv_estimator=rloo
@@ -44,7 +44,7 @@ adv_estimator=grpo
 
 agent_type=code
 tools="[code_interpreter]"
-reward_name="math_reward"
+reward_name="math_reward_format"
 entropy_coeff=0.001
 kl_loss_type=mse
 max_steps=4

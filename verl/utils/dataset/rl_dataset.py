@@ -291,14 +291,17 @@ class RLHFAgentDataset(Dataset):
     def __getitem__(self, item):
         row_dict = self.data[item]
         question = row_dict['question']
-        answer = row_dict['answer']
+        other_info = {}
+        for k, v in row_dict.items():
+            if k not in ['question']:
+                other_info[k] = v
         messages = {
             "messages": [
                 {"role": "user", "content": question}
             ],
             "question": question,
-            "answer": answer
         }
+        messages.update(other_info)
         row_dict["messages"] = messages
         row_dict["data_source"] = self.sources[item]
         row_dict["question"] = question
