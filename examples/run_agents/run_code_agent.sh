@@ -1,4 +1,4 @@
-export WANDB_API_KEY="474a8507f7dafc6a6c4203c0b9bc4a7b2abb4cfe"
+export WANDB_API_KEY="4249b9601c17643f728a468e1cf998095af899cd"
 
 # Run in single node
 
@@ -94,7 +94,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name=$project_name \
     trainer.experiment_name="${model}-${train_dataset}-${lr}-${length}-bs${batch_size}-n${num_chains}-kl${kl_loss_type}${kl_coef}-entropy${entropy_coeff}-${max_steps}steps-${adv_estimator}" \
     trainer.n_gpus_per_node=8 \
-    trainer.nnodes=1 \
+    trainer.nnodes=4 \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
     trainer.total_training_steps=$total_training_steps \
