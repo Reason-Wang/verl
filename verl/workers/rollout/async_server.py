@@ -220,9 +220,7 @@ class CompletionScheduler:
             max_retries=0
         )
         results = await client.completions.create(**complete_request)
-        # if not self.debug_has_printed:
-            # print(f"[CompletionScheduler] _completions_openai results:{results}")
-            # self.debug_has_printed = True
+        
         return results
 
     async def _completions_aiohttp(self, address: str, **complete_request) -> Completion:

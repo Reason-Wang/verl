@@ -1,32 +1,59 @@
-export VLLM_USE_V1=1
-# Run in single node
+# Mimic SLURM environment
+SLURM_JOB_NODELIST=("fs-mbz-gpu-910" "fs-mbz-gpu-963")
+SLURM_CPUS_PER_TASK=192
+
+# Conda path
+CONDA_BIN_PATH="/mnt/weka/home/renxi.wang/miniconda3/envs/python310/bin/"
+
+# Get the list of allocated nodes
+# nodes=( $(scontrol show hostnames "$SLURM_JOB_NODELIST") )
+
+nodes=("${SLURM_JOB_NODELIST[@]}")
+
+echo "Nodes to check: ${nodes[@]}"
+
 
 set -x
 
+# We'll track PIDs so we can wait on them and detect errors
+declare -A pids
 export head_node=${nodes[0]}
-
-head_node_ip=$(hostname --ip-address)
+head_node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address)
 port=6379
 address_head=$head_node_ip:$port
 
-# export VLLM_ATTENTION_BACKEND=XFORMERS
-# export GLOO_SOCKET_IFNAME=ens10f0np0
+export worker_num=2
+
+export VLLM_USE_V1=1
+
 export HYDRA_FULL_ERROR=1
+
+# =================== Ray start ===================
+# ray stop at all nodes
+srun --nodes=$worker_num --ntasks=$worker_num --ntasks-per-node=1 ray stop
+
+sleep 10
 # Remove existing Ray cluster
-ray stop
-rm -rf /tmp/ray/ray_current_cluster
+srun --nodes=$worker_num --ntasks=$worker_num --ntasks-per-node=1 rm -rf /tmp/ray/ray_current_cluster
 
 # Start Ray head node
-ray start --head --node-ip-address="$head_node_ip" --port=$port  --num-cpus 192 --num-gpus 8
+srun --nodes=1 --ntasks=1 -w "$head_node" --export=ALL \
+    ${CONDA_BIN_PATH}ray start --head --node-ip-address="$head_node_ip" --port=$port \
+    --num-cpus "${SLURM_CPUS_PER_TASK}" --num-gpus 8 --include-dashboard=True --block &
 
-# Debug
-# model=Qwen/Qwen2.5-3B-Instruct
-# lr=5e-7
-# length=512
-# batch_size=64
-# num_chains=32
-# kl_coef=0.01
-# train_dataset="gsm8k"
+sleep 10
+
+# Start Ray worker nodes
+for ((i = 1; i < worker_num; i++)); do
+    node_i=${nodes[$i]}
+    echo "Starting WORKER $i at $node_i"
+    srun --nodes=1 --ntasks=1 -w "$node_i" --export=ALL \
+        ${CONDA_BIN_PATH}ray start --address "$address_head" \
+        --num-cpus "${SLURM_CPUS_PER_TASK}" --num-gpus 8 --block &    
+done
+sleep 10
+
+
 
 model=Qwen/Qwen2.5-3B-Instruct
 template=qwen-chat
@@ -96,7 +123,7 @@ python3 -m verl.trainer.main_ppo \
     trainer.project_name=$project_name \
     trainer.experiment_name="${model}-${train_dataset}-${lr}-${length}-bs${batch_size}-n${num_chains}-kl${kl_loss_type}${kl_coef}-entropy${entropy_coeff}-${max_steps}steps-${adv_estimator}" \
     trainer.n_gpus_per_node=8 \
-    trainer.nnodes=1 \
+    trainer.nnodes=${worker_num} \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
     trainer.total_training_steps=$total_training_steps \
