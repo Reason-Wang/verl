@@ -37,11 +37,10 @@ num_chains=4
 kl_coef=0.001
 train_dataset="./data/rlhf/webshop/goals_train.json"
 eval_dataset="./data/rlhf/webshop/goals_val.json"
-tools="[webshop_browser,answer]"
+# make sure the task_info is set in the ppo_trainer.yaml
+task_info= "You are a shopping assistant. You are given a task to buy a product. Use the webshop_browser tool to navigate through the shopping app. You must reach the checkout page by cliking on the 'Buy Now' button in the product page and reach the checkout page that says 'Thank you for shopping with us!'" # For react agent, you can specify the task info here
+tools="[webshop_browser]"
 reward_name="webshop_reward"
-# adv_estimator=rloo
-# adv_estimator=reinforce_plus_plus
-task_info="You are a shopping assistant. You are given a task to buy a product."
 # adv_estimator=remax
 adv_estimator=grpo
 # adv_estimator=gae
@@ -50,7 +49,7 @@ entropy_coeff=0.001
 kl_loss_type=mse
 agent_type=react
 max_steps=8
-prompt_template="qwen-7b-chat"
+agent_backend="async_verl"
 total_training_steps=200
 project_name="AgentRL"
 
@@ -61,6 +60,7 @@ python3 -m verl.trainer.main_ppo \
     agent.num_chains=$num_chains \
     data.val_batch_size=$val_batch_size \
     data.train_batch_size=$train_batch_size \
+    agent.backend=${agent_backend} \
     agent.use_agent=True \
     agent.model_name_or_path=$model \
     agent.max_steps=${max_steps} \
@@ -99,4 +99,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
     trainer.total_training_steps=$total_training_steps \
-    trainer.val_before_train=True
+    trainer.val_before_train=False
