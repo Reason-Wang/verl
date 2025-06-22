@@ -1,15 +1,19 @@
-# Mimic SLURM environment
-SLURM_JOB_NODELIST=("fs-mbz-gpu-910" "fs-mbz-gpu-963")
-SLURM_CPUS_PER_TASK=192
-
-# Conda path
-CONDA_BIN_PATH="/mnt/weka/home/renxi.wang/miniconda3/envs/python310/bin/"
+#!/bin/bash
+#SBATCH --job-name=gsm8k_4nodes
+#SBATCH --time=200:00:00
+#SBATCH --nodes=2
+#SBATCH --ntasks=2
+#SBATCH --ntasks-per-node=1
+#SBATCH --gres=gpu:8
+#SBATCH --cpus-per-task=96
+#SBATCH --mem=512G
+#SBATCH --exclusive
+#SBATCH --account=iq
+#SBATCH --output=./stdout/%x_%j.out
+#SBATCH --error=./stdout/%x_%j.err
 
 # Get the list of allocated nodes
-# nodes=( $(scontrol show hostnames "$SLURM_JOB_NODELIST") )
-
-nodes=("${SLURM_JOB_NODELIST[@]}")
-
+nodes=( $(scontrol show hostnames "$SLURM_JOB_NODELIST") )
 echo "Nodes to check: ${nodes[@]}"
 
 
@@ -22,15 +26,17 @@ head_node_ip=$(srun --nodes=1 --ntasks=1 -w "$head_node" hostname --ip-address)
 port=6379
 address_head=$head_node_ip:$port
 
-export worker_num=2
+export worker_num=$SLURM_NNODES
 
 export VLLM_USE_V1=1
-
 export HYDRA_FULL_ERROR=1
+# Conda path
+CONDA_BIN_PATH="/mnt/weka/home/renxi.wang/miniconda3/envs/python310/bin/"
+
 
 # =================== Ray start ===================
 # ray stop at all nodes
-srun --nodes=$worker_num --ntasks=$worker_num --ntasks-per-node=1 ray stop
+srun --nodes=$worker_num --ntasks=$worker_num --ntasks-per-node=1 ${CONDA_BIN_PATH}ray stop
 
 sleep 10
 # Remove existing Ray cluster

@@ -385,6 +385,8 @@ class AsyncLLMServerManager:
         # Start all server instances, restart if address already in use.
         unready_dp_ranks = set(range(self.rollout_dp_size))
         while len(unready_dp_ranks) > 0:
+            # print("workers_info", workers_info)
+            # raise Exception("stop here")
             servers = {
                 rollout_dp_rank: server_class.options(
                     # make sure AsyncvLLMServer colocates with its corresponding workers
