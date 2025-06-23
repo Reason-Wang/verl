@@ -27,8 +27,8 @@ val_batch_size=512
 train_batch_size=128
 num_chains=1
 kl_coef=0.001
-train_dataset=
-eval_dataset=
+train_dataset=GUI-R1/train.parquet
+eval_dataset=GUI-R1/test.parquet
 reward_name="gui_reward"
 adv_estimator=grpo
 entropy_coeff=0.001
@@ -43,8 +43,8 @@ agent_type=gui
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=$adv_estimator \
-    data.train_files=/mnt/weka/home/yongxin.wang/workspace/Data/${train_dataset}.json \
-    data.val_files=/mnt/weka/home/yongxin.wang/workspace/Data/${eval_dataset}.json \
+    data.train_files=/mnt/weka/home/yongxin.wang/workspace/Data/${train_dataset} \
+    data.val_files=/mnt/weka/home/yongxin.wang/workspace/Data/${eval_dataset} \
     data.train_batch_size=$train_batch_size \
     agent.agent_type=$agent_type \
     agent.model_name_or_path=$model \
@@ -84,5 +84,4 @@ python3 -m verl.trainer.main_ppo \
     trainer.nnodes=1 \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
-    trainer.total_training_steps=$total_training_steps \
-    trainer.val_before_training=True
+    trainer.total_training_steps=$total_training_steps
