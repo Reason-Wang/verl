@@ -28,7 +28,7 @@ import torch
 from omegaconf import DictConfig, ListConfig
 from torch.utils.data import Dataset
 from transformers import PreTrainedTokenizer, ProcessorMixin
-
+import pandas as pd
 import verl.utils.torch_functional as verl_F
 from verl.utils.model import compute_position_id_with_mask
 
@@ -54,6 +54,12 @@ def collate_fn(data_list: list[dict]) -> dict:
         non_tensors[key] = np.array(val, dtype=object)
 
     return {**tensors, **non_tensors}
+
+def convert_parquet_to_json(parquet_file: str, json_file: str):
+    df = pd.read_parquet(parquet_file)
+    records = df.to_dict(orient='records')
+    with open(json_file, 'w', encoding='utf-8') as f:
+        json.dump(records, f, ensure_ascii=False, indent=2)
 
 
 class RLHFDataset(Dataset):
@@ -280,10 +286,34 @@ class RLHFAgentDataset(Dataset):
         self.truncation = "error"
         if isinstance(self.data_files, str):
             self.data_files = [self.data_files]
-        for i, data_file in enumerate(self.data_files):
-            self.data.extend(json.load(open(data_file)))
-            file_name = os.path.basename(data_file)
-            self.sources.extend([file_name] * len(json.load(open(data_file))))
+        # for i, data_file in enumerate(self.data_files):
+        #     self.data.extend(json.load(open(data_file)))
+        #     file_name = os.path.basename(data_file)
+        #     self.sources.extend([file_name] * len(json.load(open(data_file))))
+
+    def _read_data(self):
+        self._convert_parquet_to_json(self.data_files)
+        json_files = [f for f in self.data_files if f.endswith('.json')]
+
+        if json_files:
+            for json_file in json_files:
+                with open(json_file, 'r', encoding='utf-8') as f:
+                    json_data = json.load(f)
+                    self.data.extend(json_data)
+                    file_name = os.path.basename(json_file)
+                    self.sources.extend([file_name] * len(json_data))
+
+    def _convert_parquet_to_json(self, files):
+        json_files = []
+        for file in files:
+            if file.endswith('.parquet'):
+                json_path = file.replace('.parquet', '.converted.json')
+                if not os.path.exists(json_path):
+                    convert_parquet_to_json(file, json_path)
+                json_files.append(json_path)
+            else:
+                json_files.append(file)
+        return json_files
 
     def __len__(self):
         return len(self.data)
