@@ -196,15 +196,16 @@ class AsyncvLLMServer(AsyncServerBase):
         model_config = self.engine.model_config
         BASE_MODEL_PATHS = [BaseModelPath(name=model_name, model_path=model_path)]
         models = OpenAIServingModels(self.engine, model_config, BASE_MODEL_PATHS)
-        # self.openai_serving_chat = OpenAIServingChat(
-        #     self.engine,
-        #     model_config,
-        #     models,
-        #     "assistant",
-        #     request_logger=RequestLogger(max_log_len=4096),
-        #     chat_template=None,
-        #     chat_template_content_format="auto",
-        # )
+        print(f"self.config.rollout.chat_template: {self.config.rollout.chat_template}")
+        self.openai_serving_chat = OpenAIServingChat(
+            self.engine,
+            model_config,
+            models,
+            "assistant",
+            request_logger=RequestLogger(max_log_len=4096),
+            chat_template=self.config.rollout.chat_template,
+            chat_template_content_format="auto",
+        )
         self.serving_completion = OpenAIServingCompletion(
             self.engine,
             model_config,
@@ -212,22 +213,23 @@ class AsyncvLLMServer(AsyncServerBase):
             request_logger=RequestLogger(max_log_len=4096),
         )
 
-    # async def chat_completion(self, raw_request: Request):
-    #     """OpenAI-compatible HTTP endpoint.
+    async def chat_completion(self, raw_request: Request):
+        """OpenAI-compatible HTTP endpoint.
 
-    #     API reference: https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
-    #     """
-    #     request_json = await raw_request.json()
-    #     request = ChatCompletionRequest(**request_json)
-    #     generator = await self.openai_serving_chat.create_chat_completion(request, raw_request)
+        API reference: https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
+        """
+        request_json = await raw_request.json()
+        request = ChatCompletionRequest(**request_json)
+        generator = await self.openai_serving_chat.create_chat_completion(request, raw_request)
 
-    #     if isinstance(generator, ErrorResponse):
-    #         return JSONResponse(content=generator.model_dump(), status_code=generator.code)
-    #     if request.stream:
-    #         return StreamingResponse(content=generator, media_type="text/event-stream")
-    #     else:
-    #         assert isinstance(generator, ChatCompletionResponse)
-    #         return JSONResponse(content=generator.model_dump())
+        if isinstance(generator, ErrorResponse):
+            return JSONResponse(content=generator.model_dump(), status_code=generator.code)
+        if request.stream:
+            return StreamingResponse(content=generator, media_type="text/event-stream")
+        else:
+            assert isinstance(generator, ChatCompletionResponse)
+            return JSONResponse(content=generator.model_dump())
+        
         
     async def completion(self, raw_request: Request):
         """OpenAI-compatible HTTP endpoint.

@@ -288,6 +288,8 @@ class RayPPOTrainer:
         self.config = config
         print(f"Config.Agent: {config.agent}")
         self.agent_wrapper = AutoAgent.from_config(config.agent)
+        # set jinja template for vllm rollout
+        self.config.actor_rollout_ref.rollout.chat_template = self.agent_wrapper.jinja_template
         self.reward_fn = reward_fn
         self.val_reward_fn = val_reward_fn
 

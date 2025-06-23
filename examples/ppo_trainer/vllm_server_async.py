@@ -8,7 +8,7 @@ sys.path.append("../../")
 config = OmegaConf.create({
     "hybrid_engine": True,
     "model": {
-        "path": "Qwen/Qwen2.5-3B-Instruct",
+        "path": "Qwen/Qwen2.5-VL-3B-Instruct",
         "external_lib": None,
         "override_config": { },
         "enable_gradient_checkpointing": True,
@@ -98,7 +98,7 @@ config = OmegaConf.create({
         "load_format": "dummy_dtensor",
         "tensor_model_parallel_size": 1,
         "max_num_batched_tokens": 8192,
-        "max_model_len": None,
+        "max_model_len": 8192,
         "max_num_seqs": 1024,
         "log_prob_micro_batch_size": None, # will be deprecated, use log_prob_micro_batch_size_per_gpu
         "log_prob_micro_batch_size_per_gpu": None,

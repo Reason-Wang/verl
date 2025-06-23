@@ -105,6 +105,7 @@ actor_rollout_ref:
     name: vllm
     mode: async # sync: LLM, async: AsyncLLM
     chat_scheduler: examples.ppo_trainer.naive_completion_scheduler.NaiveCompletionScheduler # async chat scheduler, e.g examples.ppo_trainer.naive_chat_scheduler.NaiveChatCompletionScheduler
+    chat_template: Null # Jinja template for vllm rollout, will be set by agent
     temperature: 1.0
     top_k: -1 # 0 for hf rollout, -1 for vllm rollout
     top_p: 1
