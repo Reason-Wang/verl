@@ -2,11 +2,11 @@ agent:
   use_agent: True
   agent_type: "code"
   model_name_or_path: null
-  template: qwen-7b-chat
+  template: qwen-chat
   tools: 
     - google_search
     - answer
-  task_info: Null # For react agent, you can specify the task info here
+  task_info: null # For react agent, you can specify the task info here
   reward_name: "qa_f1_reward"
   backend: "async_verl"
   max_steps: 4
