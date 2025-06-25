@@ -292,7 +292,7 @@ class RLHFAgentDataset(Dataset):
         #     self.sources.extend([file_name] * len(json.load(open(data_file))))
 
     def _read_data(self):
-        self._convert_parquet_to_json(self.data_files)
+        parquet_files = [f for f in self.data_files if f.endswith('.parquet')]
         json_files = [f for f in self.data_files if f.endswith('.json')]
 
         if json_files:
@@ -303,17 +303,6 @@ class RLHFAgentDataset(Dataset):
                     file_name = os.path.basename(json_file)
                     self.sources.extend([file_name] * len(json_data))
 
-    def _convert_parquet_to_json(self, files):
-        json_files = []
-        for file in files:
-            if file.endswith('.parquet'):
-                json_path = file.replace('.parquet', '.converted.json')
-                if not os.path.exists(json_path):
-                    convert_parquet_to_json(file, json_path)
-                json_files.append(json_path)
-            else:
-                json_files.append(file)
-        return json_files
 
     def __len__(self):
         return len(self.data)
