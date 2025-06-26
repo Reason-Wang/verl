@@ -1,3 +1,4 @@
+export WANDB_API_KEY="xxxxx"
 export VLLM_USE_V1=1
 # Run in single node
 
@@ -43,6 +44,7 @@ adv_estimator=grpo
 # adv_estimator=gae
 
 agent_type=code
+template="qwen-chat"
 tools="[code_interpreter]"
 reward_name="math_reward_format"
 # reward_name="llm_as_judge_math_reward"
