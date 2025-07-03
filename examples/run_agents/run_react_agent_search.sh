@@ -1,4 +1,4 @@
-export WANDB_API_KEY="474a8507f7dafc6a6c4203c0b9bc4a7b2abb4cfe"
+export WANDB_API_KEY="9838c99a56754a486cc97e905120a5b9034eaf80"
 
 # Run in single node
 
@@ -12,7 +12,7 @@ address_head=$head_node_ip:$port
 
 # export VLLM_ATTENTION_BACKEND=XFORMERS
 # export GLOO_SOCKET_IFNAME=ens10f0np0
-export USE_VLLM_V1=1
+export VLLM_USE_V1=1
 export HYDRA_FULL_ERROR=1
 # Remove existing Ray cluster
 ray stop
@@ -39,11 +39,11 @@ num_chains=8
 kl_coef=0.001
 train_dataset="./data/rlhf/qa/train_random_8000.json"
 eval_dataset="./data/rlhf/qa/dev_random_500.json"
-tools="[dense_retrieve,answer]"
+tools="[asyncdense_retrieve,answer]"
 # reward_name="qa_f1_reward"
 reward_name="qa_f1_reward_format"
 # adv_estimator=rloo
-adv_estimator=reinforce_plus_plus
+adv_estimator=rloo
 # adv_estimator=remax
 # adv_estimator=grpo
 # adv_estimator=gae
@@ -52,9 +52,9 @@ entropy_coeff=0.001
 kl_loss_type=mse
 agent_type=react
 max_steps=4
-prompt_template="qwen-7b-chat"
-total_training_steps=200
-project_name="AgentRL"
+prompt_template="qwen-chat"
+total_training_steps=100
+project_name="AgentRL-Retrieval"
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=$adv_estimator \
