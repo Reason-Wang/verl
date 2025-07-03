@@ -1,5 +1,5 @@
-export WANDB_API_KEY="xxxxx"
-export VLLM_USE_V1=1
+export WANDB_API_KEY="817968bae37f1e87dcc478849b7c8a78a49e96a5"
+
 # Run in single node
 
 set -x
@@ -20,50 +20,33 @@ rm -rf /tmp/ray/ray_current_cluster
 # Start Ray head node
 ray start --head --node-ip-address="$head_node_ip" --port=$port  --num-cpus 192 --num-gpus 8
 
-# Debug
-# model=Qwen/Qwen2.5-3B-Instruct
-# lr=5e-7
-# length=512
-# batch_size=64
-# num_chains=32
-# kl_coef=0.01
-# train_dataset="gsm8k"
-
-model=Qwen/Qwen2.5-3B-Instruct
-template=qwen-chat
+model=Qwen/Qwen2.5-VL-3B-Instruct
 lr=5e-7
 length=512
-batch_size=128
-num_chains=4
+val_batch_size=512
+train_batch_size=128
+num_chains=1
 kl_coef=0.001
-train_dataset="orz_math_57k_train"
-# adv_estimator=rloo
-# adv_estimator=reinforce_plus_plus
-# adv_estimator=remax
+train_dataset=GUI-R1/train.parquet
+eval_dataset=GUI-R1/test.parquet
+reward_name="gui_reward"
 adv_estimator=grpo
-# adv_estimator=gae
-
-agent_type=code
-template="qwen-chat"
-tools="[code_interpreter]"
-reward_name="math_reward_format"
-# reward_name="llm_as_judge_math_reward"
 entropy_coeff=0.001
 kl_loss_type=mse
 max_steps=4
+prompt_template="qwen2.5-vl"
 agent_backend="async_verl"
-project_name="AgentRL"
 total_training_steps=200
+project_name="AgentRL"
+agent_type=gui
 
 
 python3 -m verl.trainer.main_ppo \
     algorithm.adv_estimator=$adv_estimator \
-    data.train_files=./data/rlhf/math/${train_dataset}.json \
-    data.val_files=./data/rlhf/math/MATH_500.json \
-    data.train_batch_size=$batch_size \
+    data.train_files=/mnt/weka/home/yongxin.wang/workspace/Data/${train_dataset} \
+    data.val_files=/mnt/weka/home/yongxin.wang/workspace/Data/${eval_dataset} \
+    data.train_batch_size=$train_batch_size \
     agent.agent_type=$agent_type \
-    agent.tools=$tools \
-    agent.template=$template \
     agent.model_name_or_path=$model \
     agent.max_steps=${max_steps} \
     agent.backend=${agent_backend} \
@@ -96,10 +79,9 @@ python3 -m verl.trainer.main_ppo \
     trainer.critic_warmup=0 \
     trainer.logger=['console','wandb'] \
     trainer.project_name=$project_name \
-    trainer.experiment_name="${model}-${train_dataset}-${lr}-${length}-bs${batch_size}-n${num_chains}-kl${kl_loss_type}${kl_coef}-entropy${entropy_coeff}-${max_steps}steps-${adv_estimator}" \
+    trainer.experiment_name="${model}-${train_dataset}-${lr}-${length}-bs${train_batch_size}-n${num_chains}-kl${kl_loss_type}${kl_coef}-entropy${entropy_coeff}-${max_steps}steps-${adv_estimator}" \
     trainer.n_gpus_per_node=8 \
     trainer.nnodes=1 \
     trainer.save_freq=50 \
     trainer.test_freq=10 \
-    trainer.total_training_steps=$total_training_steps \
-    trainer.val_before_train=False
+    trainer.total_training_steps=$total_training_steps

@@ -70,8 +70,10 @@ class AsyncServerBase(ABC):
             os._exit(-1)
 
         app = fastapi.FastAPI(lifespan=lifespan)
-        # app.router.add_api_route("/v1/chat/completions", self.chat_completion, methods=["POST"])
-        app.router.add_api_route("/v1/completions", self.completion, methods=["POST"])
+        if "qwen2.5-vl" in self.config.model.path.lower():
+            app.router.add_api_route("/v1/chat/completions", self.chat_completion, methods=["POST"])
+        else:
+            app.router.add_api_route("/v1/completions", self.completion, methods=["POST"])
 
         self.port = _get_free_port()
         config = uvicorn.Config(app, host=["::", "0.0.0.0"], port=self.port, log_level="warning")
@@ -83,13 +85,13 @@ class AsyncServerBase(ABC):
         await self.server_ready.wait()
         return f"{self.address}:{self.port}"
 
-    # @abstractmethod
-    # async def chat_completion(self, raw_request: Request):
-    #     """OpenAI chat completion API.
+    @abstractmethod
+    async def chat_completion(self, raw_request: Request):
+        """OpenAI chat completion API.
 
-    #     API reference: https://platform.openai.com/docs/api-reference/chat/create
-    #     """
-    #     raise NotImplementedError
+        API reference: https://platform.openai.com/docs/api-reference/chat/create
+        """
+        raise NotImplementedError
 
     @abstractmethod
     async def completion(self, raw_request: Request):

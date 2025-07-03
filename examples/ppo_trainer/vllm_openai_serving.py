@@ -116,7 +116,7 @@ async def create_completion_with_mm(
 
         tokenizer = await self.engine_client.get_tokenizer(lora_request)
 
-        request_prompts, engine_prompts = await self._preprocess_completion_with_mm(
+        request_prompts, engine_prompts = await self._preprocess_completion(
             request,
             tokenizer,
             request.prompt,
@@ -254,3 +254,8 @@ async def create_completion_with_mm(
         return fake_stream_generator()
 
     return response
+
+def overwrite_vllm_openai_serving_completion_with_mm():
+    OpenAIServingCompletion._preprocess_completion = _preprocess_completion_with_mm
+    OpenAIServingCompletion.create_completion = create_completion_with_mm
+    return OpenAIServingCompletion

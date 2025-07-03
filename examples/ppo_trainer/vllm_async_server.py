@@ -40,6 +40,7 @@ from vllm.worker.worker_base import WorkerWrapperBase
 
 from verl.utils.fs import copy_to_local
 from verl.workers.rollout.async_server import AsyncServerBase
+from vllm_openai_serving import overwrite_vllm_openai_serving_completion_with_mm
 
 logger = logging.getLogger(__file__)
 
@@ -72,8 +73,8 @@ class AsyncServerBase(ABC):
             os._exit(-1)
 
         app = fastapi.FastAPI(lifespan=lifespan)
-        # app.router.add_api_route("/v1/chat/completions", self.chat_completion, methods=["POST"])
-        app.router.add_api_route("/v1/completions", self.completion, methods=["POST"])
+        app.router.add_api_route("/v1/chat/completions", self.chat_completion, methods=["POST"])
+        # app.router.add_api_route("/v1/completions", self.completion, methods=["POST"])
 
         self.port = _get_free_port()
         config = uvicorn.Config(app, host=["::", "0.0.0.0"], port=self.port, log_level="debug")
@@ -207,15 +208,16 @@ class AsyncvLLMServer(AsyncServerBase):
         model_config = self.engine.model_config
         BASE_MODEL_PATHS = [BaseModelPath(name=model_name, model_path=model_path)]
         models = OpenAIServingModels(self.engine, model_config, BASE_MODEL_PATHS)
-        # self.openai_serving_chat = OpenAIServingChat(
-        #     self.engine,
-        #     model_config,
-        #     models,
-        #     "assistant",
-        #     request_logger=RequestLogger(max_log_len=4096),
-        #     chat_template=None,
-        #     chat_template_content_format="auto",
-        # )
+        self.openai_serving_chat = OpenAIServingChat(
+            self.engine,
+            model_config,
+            models,
+            "assistant",
+            request_logger=RequestLogger(max_log_len=4096),
+            chat_template=None,
+            chat_template_content_format="auto",
+        )
+        OpenAIServingCompletion = overwrite_vllm_openai_serving_completion_with_mm()
         self.serving_completion = OpenAIServingCompletion(
             self.engine,
             model_config,
@@ -223,22 +225,22 @@ class AsyncvLLMServer(AsyncServerBase):
             request_logger=RequestLogger(max_log_len=4096),
         )
 
-    # async def chat_completion(self, raw_request: Request):
-    #     """OpenAI-compatible HTTP endpoint.
+    async def chat_completion(self, raw_request: Request):
+        """OpenAI-compatible HTTP endpoint.
 
-    #     API reference: https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
-    #     """
-    #     request_json = await raw_request.json()
-    #     request = ChatCompletionRequest(**request_json)
-    #     generator = await self.openai_serving_chat.create_chat_completion(request, raw_request)
+        API reference: https://docs.vllm.ai/en/latest/serving/openai_compatible_server.html
+        """
+        request_json = await raw_request.json()
+        request = ChatCompletionRequest(**request_json)
+        generator = await self.openai_serving_chat.create_chat_completion(request, raw_request)
 
-    #     if isinstance(generator, ErrorResponse):
-    #         return JSONResponse(content=generator.model_dump(), status_code=generator.code)
-    #     if request.stream:
-    #         return StreamingResponse(content=generator, media_type="text/event-stream")
-    #     else:
-    #         assert isinstance(generator, ChatCompletionResponse)
-    #         return JSONResponse(content=generator.model_dump())
+        if isinstance(generator, ErrorResponse):
+            return JSONResponse(content=generator.model_dump(), status_code=generator.code)
+        if request.stream:
+            return StreamingResponse(content=generator, media_type="text/event-stream")
+        else:
+            assert isinstance(generator, ChatCompletionResponse)
+            return JSONResponse(content=generator.model_dump())
         
     async def completion(self, raw_request: Request):
         """OpenAI-compatible HTTP endpoint.
