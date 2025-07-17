@@ -14,7 +14,9 @@
 # See the License for the specific language governing permissions and
 # limitations under the License.
 
+import base64
 import copy
+import io
 import json
 import logging
 import os
@@ -31,8 +33,111 @@ from transformers import PreTrainedTokenizer, ProcessorMixin
 import pandas as pd
 import verl.utils.torch_functional as verl_F
 from verl.utils.model import compute_position_id_with_mask
+from PIL import Image
 
 logger = logging.getLogger(__name__)
+
+
+def convert_gt_to_ui_format(gt_action, gt_bbox=None, gt_input_text=None):
+    """Convert ground truth data to UI agent action format."""
+    # Convert numpy arrays to lists if needed
+    if hasattr(gt_bbox, 'tolist'):
+        gt_bbox = gt_bbox.tolist()
+    
+    if gt_action == "click":
+        if gt_bbox is not None and len(gt_bbox) >= 2:
+            if len(gt_bbox) == 2:
+                x, y = gt_bbox
+                return f"click(start_box='<|box_start|>({x},{y})<|box_end|>')"
+            elif len(gt_bbox) == 4:
+                x1, y1, x2, y2 = gt_bbox
+                # Use center of bbox
+                x = (x1 + x2) // 2
+                y = (y1 + y2) // 2
+                return f"click(start_box='<|box_start|>({x},{y})<|box_end|>')"
+        return "click(start_box='<|box_start|>(0,0)<|box_end|>')"
+    
+    elif gt_action == "left_double":
+        if gt_bbox is not None and len(gt_bbox) >= 2:
+            if len(gt_bbox) == 2:
+                x, y = gt_bbox
+                return f"left_double(start_box='<|box_start|>({x},{y})<|box_end|>')"
+            elif len(gt_bbox) == 4:
+                x1, y1, x2, y2 = gt_bbox
+                x = (x1 + x2) // 2
+                y = (y1 + y2) // 2
+                return f"left_double(start_box='<|box_start|>({x},{y})<|box_end|>')"
+        return "left_double(start_box='<|box_start|>(0,0)<|box_end|>')"
+    
+    elif gt_action == "right_single":
+        if gt_bbox is not None and len(gt_bbox) >= 2:
+            if len(gt_bbox) == 2:
+                x, y = gt_bbox
+                return f"right_single(start_box='<|box_start|>({x},{y})<|box_end|>')"
+            elif len(gt_bbox) == 4:
+                x1, y1, x2, y2 = gt_bbox
+                x = (x1 + x2) // 2
+                y = (y1 + y2) // 2
+                return f"right_single(start_box='<|box_start|>({x},{y})<|box_end|>')"
+        return "right_single(start_box='<|box_start|>(0,0)<|box_end|>')"
+    
+    elif gt_action == "drag":
+        # For drag, we need start and end boxes
+        if gt_bbox is not None and len(gt_bbox) >= 4:
+            if len(gt_bbox) == 4:
+                # Assume it's start_x, start_y, end_x, end_y
+                x1, y1, x2, y2 = gt_bbox
+                return f"drag(start_box='<|box_start|>({x1},{y1})<|box_end|>', end_box='<|box_start|>({x2},{y2})<|box_end|>')"
+            elif len(gt_bbox) == 8:
+                # start_box and end_box coordinates
+                x1, y1, x2, y2, x3, y3, x4, y4 = gt_bbox
+                start_x = (x1 + x2) // 2
+                start_y = (y1 + y2) // 2
+                end_x = (x3 + x4) // 2
+                end_y = (y3 + y4) // 2
+                return f"drag(start_box='<|box_start|>({start_x},{start_y})<|box_end|>', end_box='<|box_start|>({end_x},{end_y})<|box_end|>')"
+        return "drag(start_box='<|box_start|>(0,0)<|box_end|>', end_box='<|box_start|>(100,100)<|box_end|>')"
+    
+    elif gt_action == "type":
+        if gt_input_text:
+            # Escape special characters
+            content = gt_input_text.replace("'", "\\'").replace('"', '\\"').replace('\n', '\\n')
+            return f"type(content='{content}')"
+        return "type(content='')"
+    
+    elif gt_action == "scroll":
+        direction = gt_input_text if gt_input_text else "down"
+        if gt_bbox is not None and len(gt_bbox) >= 2:
+            if len(gt_bbox) == 2:
+                x, y = gt_bbox
+                return f"scroll(start_box='<|box_start|>({x},{y})<|box_end|>', direction='{direction}')"
+            elif len(gt_bbox) == 4:
+                x1, y1, x2, y2 = gt_bbox
+                x = (x1 + x2) // 2
+                y = (y1 + y2) // 2
+                return f"scroll(start_box='<|box_start|>({x},{y})<|box_end|>', direction='{direction}')"
+        return f"scroll(start_box='<|box_start|>(0,0)<|box_end|>', direction='{direction}')"
+    
+    elif gt_action == "hotkey":
+        if gt_input_text:
+            return f"hotkey(key='{gt_input_text}')"
+        return "hotkey(key='')"
+    
+    elif gt_action == "wait":
+        return "wait()"
+    
+    elif gt_action == "finished":
+        if gt_input_text:
+            content = gt_input_text.replace("'", "\\'").replace('"', '\\"').replace('\n', '\\n')
+            return f"finished(content='{content}')"
+        return "finished(content='')"
+    
+    elif gt_action == "call_user":
+        return "call_user()"
+    
+    else:
+        # Default to click if action type is unknown
+        return "click(start_box='<|box_start|>(0,0)<|box_end|>')"
 
 
 def collate_fn(data_list: list[dict]) -> dict:
@@ -60,6 +165,13 @@ def convert_parquet_to_json(parquet_file: str, json_file: str):
     records = df.to_dict(orient='records')
     with open(json_file, 'w', encoding='utf-8') as f:
         json.dump(records, f, ensure_ascii=False, indent=2)
+
+
+def pil_to_data_uri(img: Image.Image, fmt="PNG") -> str:
+    buf = io.BytesIO()
+    img.save(buf, format=fmt)
+    b64 = base64.b64encode(buf.getvalue()).decode()
+    return f"data:image/{fmt.lower()};base64,{b64}"
 
 
 class RLHFDataset(Dataset):
@@ -286,41 +398,141 @@ class RLHFAgentDataset(Dataset):
         self.truncation = "error"
         if isinstance(self.data_files, str):
             self.data_files = [self.data_files]
+        elif isinstance(self.data_files, list):
+            self.data_files = [f for f in self.data_files]
+        else:
+            raise ValueError(f"Unsupported data_files type: {type(self.data_files)}")
         # for i, data_file in enumerate(self.data_files):
         #     self.data.extend(json.load(open(data_file)))
         #     file_name = os.path.basename(data_file)
         #     self.sources.extend([file_name] * len(json.load(open(data_file))))
+        self._read_data()
+
+        
 
     def _read_data(self):
-        parquet_files = [f for f in self.data_files if f.endswith('.parquet')]
-        json_files = [f for f in self.data_files if f.endswith('.json')]
+        # self._convert_parquet_to_json(self.data_files)
+        # json_files = [f for f in self.data_files if f.endswith('.json')]
 
-        if json_files:
-            for json_file in json_files:
-                with open(json_file, 'r', encoding='utf-8') as f:
+        # if json_files:
+        #     for json_file in json_files:
+        #         with open(json_file, 'r', encoding='utf-8') as f:
+        #             json_data = json.load(f)
+        #             self.data.extend(json_data)
+        #             file_name = os.path.basename(json_file)
+        #             self.sources.extend([file_name] * len(json_data))
+        for data_file in self.data_files:
+            if data_file.endswith('.parquet'):
+                df = pd.read_parquet(data_file)
+                self.data.extend(df.to_dict(orient='records'))
+                self.sources.extend([os.path.basename(data_file)] * len(df))
+            elif data_file.endswith('.json'):
+                with open(data_file, 'r', encoding='utf-8') as f:
                     json_data = json.load(f)
                     self.data.extend(json_data)
-                    file_name = os.path.basename(json_file)
-                    self.sources.extend([file_name] * len(json_data))
+                    self.sources.extend([os.path.basename(data_file)] * len(json_data))
+            else:
+                raise ValueError(f"Unsupported file type: {data_file}")
+        print(f"dataset len: {len(self.data)}")
 
 
     def __len__(self):
         return len(self.data)
     
+    def _build_messages(self, row_dict):
+        question_keys = ['question', 'problem', 'instruction']
+        for key in question_keys:
+            question = None
+            if key in row_dict:
+                question = row_dict[key]
+                break
+        if question is None:
+            raise ValueError(f"question not found in row_dict: {row_dict}")
+        
+        if "image" in row_dict:
+            from verl.utils.dataset.vision_utils import process_image
+            image = process_image(row_dict["image"])
+            image = pil_to_data_uri(image)
+            # convert PIL Image to base64
+            # buffer = io.BytesIO()
+            # image.save(buffer, format="PNG")
+            # image = base64.b64encode(buffer.getvalue()).decode("utf-8")
+            
+        else:
+            image = None
+        
+        single_messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "text", "text": question}
+                ]
+            }
+        ]
+        if image is not None:
+            # OpenAI chat completion API only supports image_url
+            single_messages[0]["content"].append({"type": "image_url", "image_url": {"url": image}})
+        
+        # Build the messages structure with ground truth data
+        messages = {
+            "messages": single_messages,
+            "question": question,
+            # Include ground truth data if available
+            "gt_action": row_dict.get("gt_action", ""),
+            "gt_bbox": row_dict.get("gt_bbox", []),
+            "gt_input_text": row_dict.get("gt_input_text", ""),
+        }
+
+        # Add any other info from row_dict
+        other_info = {}
+        for k, v in row_dict.items():
+            if k not in ['question', 'messages', 'gt_action', 'gt_bbox', 'gt_input_text']:
+                other_info[k] = v
+
+        messages.update(other_info)
+
+        return messages, question
+
+
+    
     def __getitem__(self, item):
         row_dict = self.data[item]
-        question = row_dict['question']
-        answer = row_dict['answer']
-        messages = {
-            "messages": [
-                {"role": "user", "content": question}
-            ],
-            "question": question,
-            "answer": answer
-        }
+        
+        # Convert any numpy arrays to lists recursively before building messages
+        def convert_numpy_to_list(obj):
+            if hasattr(obj, 'tolist'):
+                return obj.tolist()
+            elif isinstance(obj, dict):
+                return {k: convert_numpy_to_list(v) for k, v in obj.items()}
+            elif isinstance(obj, list):
+                return [convert_numpy_to_list(item) for item in obj]
+            elif isinstance(obj, tuple):
+                return tuple(convert_numpy_to_list(item) for item in obj)
+            else:
+                return obj
+        
+        row_dict = convert_numpy_to_list(row_dict)
+        
+        messages, question = self._build_messages(row_dict)
         row_dict["messages"] = messages
         row_dict["data_source"] = self.sources[item]
         row_dict["question"] = question
+        
+        # Convert gt_action to UI agent format if present
+        if "gt_action" in row_dict:
+            gt_action = row_dict.get("gt_action", "")
+            gt_bbox = row_dict.get("gt_bbox", [])
+            gt_input_text = row_dict.get("gt_input_text", "")
+            
+            # Convert to UI agent action format
+            ui_action = convert_gt_to_ui_format(gt_action, gt_bbox, gt_input_text)
+            row_dict["ui_action"] = ui_action
+            
+            # For GUI tasks, ensure we have an image
+            if "image" not in row_dict and "messages" in row_dict:
+                # Add a placeholder image if none exists
+                print(f"[RLAgentDataset] Warning: GUI task without image for index {row_dict.get('index', 'unknown')}")
+        
         # May be for compatibility with the original dataset
         # And we don't actually need this
         # inputs = self.tokenizer(question, return_tensors='pt')

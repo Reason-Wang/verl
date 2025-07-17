@@ -1,0 +1,2017 @@
+[
+    {
+        "asin": "B07FYPSNH8",
+        "category": "grocery",
+        "query": "beverages",
+        "name": "OWYN - 100% Vegan Plant-Based Protein Shakes | Cold Brew Coffee, 12 Fl Oz | Dairy-Free, Gluten-Free, Soy-Free, Tree Nut-Free, Egg-Free, Allergy-Free, Vegetarian",
+        "product_category": "Grocery & Gourmet Food \u203a Beverages \u203a Bottled Beverages, Water & Drink Mixes \u203a Meal Replacement & Protein Drinks \u203a Protein Drinks",
+        "instruction_text": "i am looking for a gluten free, 100% vegan plant based protein shake that is soy-free, and price lower than 40.00 dollars",
+        "attributes": [
+          "gluten free"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 0,
+        "question": "i am looking for a gluten free, 100% vegan plant based protein shake that is soy-free, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B09R4RJSFP",
+        "category": "beauty",
+        "query": "hair masks",
+        "name": "Magical Hair Treatment Mask 5 Seconds Repairs Damage Hair Advanced Molecular Hair deep Conditioner Roots Treatment Return Bouncy Restore Elasticity Hair Care Essence (60ML)",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Masks",
+        "instruction_text": "i need a 120 ml hair mask treatment, and price lower than 130.00 dollars",
+        "attributes": [
+          "hair treatment"
+        ],
+        "price_upper": 130.0,
+        "goal_options": [
+          "120ml"
+        ],
+        "weight": 1,
+        "task_id": 1,
+        "question": "i need a 120 ml hair mask treatment, and price lower than 130.00 dollars"
+      },
+      {
+        "asin": "B099231V35",
+        "category": "fashion",
+        "query": "men's pants",
+        "name": "Mens Casual Cargo Pants Hi Vis Viz Reflective Overalls High Visibility Safe Work Pants Outdoor Hiking Trousers Big and Tall",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Sport Specific Clothing \u203a Running \u203a Men \u203a Pants",
+        "instruction_text": "hello, i'm looking for a pair of cargo pants for everyday casual wear? but also hiking-friendly. also, i want an orange pair please, and price lower than 50.00 dollars",
+        "attributes": [
+          "relaxed fit",
+          "everyday wear"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "orange"
+        ],
+        "weight": 1,
+        "task_id": 2,
+        "question": "hello, i'm looking for a pair of cargo pants for everyday casual wear? but also hiking-friendly. also, i want an orange pair please, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B09PY89B1S",
+        "category": "beauty",
+        "query": "hair loss products",
+        "name": "Upgraded Version Regrowth Organic Hair Serum Roller Set, Biotin Hair Growth Serum,Triple Roll-On Massager Hair Growth Essence,for Men Women of All Hair Types (5PCS)",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Loss Products \u203a Hair Regrowth Treatments",
+        "instruction_text": "show me an one organic hair growth serum roller set for all hair types, and price lower than 50.00 dollars",
+        "attributes": [
+          "hair growth"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "1pcs"
+        ],
+        "weight": 1,
+        "task_id": 3,
+        "question": "show me an one organic hair growth serum roller set for all hair types, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B08G14B779",
+        "category": "beauty",
+        "query": "bathing accessories",
+        "name": "NIUTA 2 Pack Hair Towel Wrap, Microfiber Quick Drying Hair Towels, Super Absorbent Quick Dry Hair Towel, Wrapped Bath Cap (Pink+Light Blue)",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Accessories \u203a Hair Drying Towels",
+        "instruction_text": "i want a pink niuta 2 pack hair towel wrap for dry hair, and price lower than 30.00 dollars",
+        "attributes": [
+          "dry hair"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "pink"
+        ],
+        "weight": 1,
+        "task_id": 4,
+        "question": "i want a pink niuta 2 pack hair towel wrap for dry hair, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B07S7HDC88",
+        "category": "fashion",
+        "query": "men's loafers & slip-ons",
+        "name": "VanciLin Mens Casual Leather Fashion Slip-on Loafers",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Shoes \u203a Loafers & Slip-Ons",
+        "instruction_text": "i am looking for a pair of men's size 10.5 black loafers with rubber soles, and price lower than 70.00 dollars",
+        "attributes": [
+          "rubber sole"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "black1901",
+          "10.5"
+        ],
+        "weight": 1,
+        "task_id": 5,
+        "question": "i am looking for a pair of men's size 10.5 black loafers with rubber soles, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B09NTCCVGX",
+        "category": "garden",
+        "query": "ottomans",
+        "name": "Ottoman Footstools Folding Storage Box with Lid, Large Storage Seat Faux Leather Footstool Toy Storage Box, Yellow, 40x40x40cm (Color : Yellow, Size : 40X40X40cm)",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Accent Furniture \u203a Ottomans",
+        "instruction_text": "i want to buy a folding storage box ottoman which i can easily install and has faux leather, the size of it should be 60x40x40cm, and price lower than 170.00 dollars",
+        "attributes": [
+          "easy install",
+          "faux leather"
+        ],
+        "price_upper": 170.0,
+        "goal_options": [
+          "60x40x40cm"
+        ],
+        "weight": 1,
+        "task_id": 6,
+        "question": "i want to buy a folding storage box ottoman which i can easily install and has faux leather, the size of it should be 60x40x40cm, and price lower than 170.00 dollars"
+      },
+      {
+        "asin": "B09HX5CD2D",
+        "category": "fashion",
+        "query": "men's shorts",
+        "name": "CSU Cleveland State University Vikings Property Fleece Drawstring Shorts Heather Charcoal",
+        "product_category": "",
+        "instruction_text": "i need some draw string shorts that are official cleveland university. the need to be small and charcoal along with being machine washable, and price lower than 70.00 dollars",
+        "attributes": [
+          "officially licensed",
+          "machine wash",
+          "drawstring closure"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "heather charcoal",
+          "small"
+        ],
+        "weight": 1,
+        "task_id": 7,
+        "question": "i need some draw string shorts that are official cleveland university. the need to be small and charcoal along with being machine washable, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B09KP78G37",
+        "category": "fashion",
+        "query": "women's coats, jackets & vests",
+        "name": "Women Faux Fur Lined Jacket Coat Winter Warm Thick Fleece Outwear Trench Zipper Plus Size Long Sleeve Plush Overcoat",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Coats, Jackets & Vests \u203a Fur & Faux Fur",
+        "instruction_text": "i am looking for x-large, red color women faux fur lined winter warm jacket coat, and price lower than 80.00 dollars",
+        "attributes": [
+          "winter warm"
+        ],
+        "price_upper": 80.0,
+        "goal_options": [
+          "red",
+          "x-large"
+        ],
+        "weight": 1,
+        "task_id": 8,
+        "question": "i am looking for x-large, red color women faux fur lined winter warm jacket coat, and price lower than 80.00 dollars"
+      },
+      {
+        "asin": "B003I567W4",
+        "category": "grocery",
+        "query": "pantry staples",
+        "name": "Blue Diamond Almonds Nut Thins Gluten Free Cracker Crisps, Hint of Sea Salt, 4.25 Oz Boxes (Pack of 12)",
+        "product_category": "Grocery & Gourmet Food \u203a Snacks & Sweets \u203a Snack Foods \u203a Crackers \u203a Flatbread",
+        "instruction_text": "place order for a pack of 12 blue diamond almonds that is gluten free and has the pecan flavor, and price lower than 60.00 dollars",
+        "attributes": [
+          "gluten free"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "pecan"
+        ],
+        "weight": 1,
+        "task_id": 9,
+        "question": "place order for a pack of 12 blue diamond almonds that is gluten free and has the pecan flavor, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B087Y28XLM",
+        "category": "beauty",
+        "query": "body care",
+        "name": "Palmer's Mens Body/face Lotion 8.5 Ounce",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Body \u203a Moisturizers \u203a Lotions",
+        "instruction_text": "i am looking fresh scent body lotion for dry skin, and price lower than 40.00 dollars",
+        "attributes": [
+          "dry skin"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "fresh"
+        ],
+        "weight": 1,
+        "task_id": 10,
+        "question": "i am looking fresh scent body lotion for dry skin, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B09MW563KN",
+        "category": "beauty",
+        "query": "tongue cleaners",
+        "name": "SWAGOFKGys Travel Toothbrushes\uff0c Double Side Tongue Cleaner Brush for Tongue Cleaning Oral Care Tool Silicone Tongue Scraper Toothbrush Fresh Breath (Color : Yellow)",
+        "product_category": "Beauty & Personal Care \u203a Oral Care \u203a Toothbrushes & Accessories \u203a Manual Toothbrushes",
+        "instruction_text": "i am looking for blue color toothbrushes that helps to maintain my oral hygiene, and price lower than 50.00 dollars",
+        "attributes": [
+          "oral hygiene"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "blue"
+        ],
+        "weight": 1,
+        "task_id": 11,
+        "question": "i am looking for blue color toothbrushes that helps to maintain my oral hygiene, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B005X7IXTK",
+        "category": "beauty",
+        "query": "deodorants & antiperspirants",
+        "name": "L'Erbolario - Iris - Deodorant Cream - Floral and Powdery Scent - Anti-perspirant Properties - Maintains Freshness, Protects Skin - Made with Marshmallow, 1.6 Oz",
+        "product_category": "Beauty & Personal Care \u203a Personal Care \u203a Deodorants & Antiperspirants \u203a Deodorant",
+        "instruction_text": "i need cruelty free deodorant that has a woody scent and is 1.6 oz, and price lower than 70.00 dollars",
+        "attributes": [
+          "cruelty free"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "woody scent",
+          "1.6 ounce (pack of 1)"
+        ],
+        "weight": 1,
+        "task_id": 12,
+        "question": "i need cruelty free deodorant that has a woody scent and is 1.6 oz, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B08CXD2VHG",
+        "category": "beauty",
+        "query": "hair extensions, wigs & accessories",
+        "name": "FU SHEN Clips for Hair Extensions DIY Clip in on Hair Extension Wigs Clip Set with Rubber 32mm U-Shape Snap Clips 30 Pcs 9 Teeth Black Clip for Hair Extension Wigs Clips Weft Hairpiece DIY Clips Set Include Needles Thread and Soft Ruler",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Extensions, Wigs & Accessories \u203a Hair Extensions",
+        "instruction_text": "i need a clip set hair extensions with stainless steel, and price lower than 50.00 dollars",
+        "attributes": [
+          "stainless steel"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "clip set"
+        ],
+        "weight": 1,
+        "task_id": 13,
+        "question": "i need a clip set hair extensions with stainless steel, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B003DNL9XI",
+        "category": "grocery",
+        "query": "beverages",
+        "name": "Crystal Light Raspberry Ice Drink Mix (12-Quart), 1.3-Ounce Packages (Pack of 4)",
+        "product_category": "Grocery & Gourmet Food \u203a Beverages \u203a Bottled Beverages, Water & Drink Mixes \u203a Energy Drinks",
+        "instruction_text": "i am looking for a caffeine free raspberry ice flavored drink mix, and price lower than 70.00 dollars",
+        "attributes": [
+          "caffeine free"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "raspberry ice"
+        ],
+        "weight": 1,
+        "task_id": 14,
+        "question": "i am looking for a caffeine free raspberry ice flavored drink mix, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B003DNL9XI",
+        "category": "grocery",
+        "query": "beverages",
+        "name": "Crystal Light Raspberry Ice Drink Mix (12-Quart), 1.3-Ounce Packages (Pack of 4)",
+        "product_category": "Grocery & Gourmet Food \u203a Beverages \u203a Bottled Beverages, Water & Drink Mixes \u203a Energy Drinks",
+        "instruction_text": "i am looking for a caffeine free raspberry ice flavored drink mix, and price lower than 80.00 dollars",
+        "attributes": [
+          "caffeine free"
+        ],
+        "price_upper": 80.0,
+        "goal_options": [
+          "raspberry ice"
+        ],
+        "weight": 1,
+        "task_id": 15,
+        "question": "i am looking for a caffeine free raspberry ice flavored drink mix, and price lower than 80.00 dollars"
+      },
+      {
+        "asin": "B07QBY4387",
+        "category": "electronics",
+        "query": "underwater photography",
+        "name": "DORCEV 7x5ft Underwater World Photography Backdrop Summer Holiday Party Birthday Party Baby Shower Background Colorful Coral Reef Dolphin Under The Sea Kids Newborn Family Photo Studio Props",
+        "product_category": "Electronics \u203a Camera & Photo \u203a Lighting & Studio \u203a Photo Studio \u203a Backgrounds",
+        "instruction_text": "i am looking for a 6 foot by 4 foot underwater photography backdrop, and price lower than 60.00 dollars",
+        "attributes": [
+          "light weight"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "6x4ft"
+        ],
+        "weight": 1,
+        "task_id": 16,
+        "question": "i am looking for a 6 foot by 4 foot underwater photography backdrop, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B075DL8NTG",
+        "category": "fashion",
+        "query": "women's shorts",
+        "name": "Yoga by Epic MMA Gear Yoga Shorts - Booty Shorts",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Active \u203a Active Shorts",
+        "instruction_text": "i would like a pair of small blue shorts made of nylon spandex, and price lower than 40.00 dollars",
+        "attributes": [
+          "nylon spandex"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "blue",
+          "small"
+        ],
+        "weight": 1,
+        "task_id": 17,
+        "question": "i would like a pair of small blue shorts made of nylon spandex, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B07QFL1S9C",
+        "category": "beauty",
+        "query": "refillable containers",
+        "name": "6 colors Travel Portable Refillable Perfume Atomizer Bottle Empty Pump Lotion Perfume Spray Bottle 12ml(2)",
+        "product_category": "Beauty & Personal Care \u203a Tools & Accessories \u203a Bags & Cases",
+        "instruction_text": "i need a high quality perfume atomizer bottle that is easy to carry and has 1 color, and price lower than 40.00 dollars",
+        "attributes": [
+          "easy carry",
+          "high quality"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "1"
+        ],
+        "weight": 1,
+        "task_id": 18,
+        "question": "i need a high quality perfume atomizer bottle that is easy to carry and has 1 color, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B07MPTK3GY",
+        "category": "garden",
+        "query": "kitchen islands",
+        "name": "Vintage Industrial Pendant Light, Yosoan 1-Light Head Hanging Semi Flush Mount Light Fixture Kitchen Ceiling Light Clear Seeded Glass Shade with Bathroom Porch Living Room Hotels Bar Foyer(Antique)",
+        "product_category": "Tools & Home Improvement \u203a Lighting & Ceiling Fans \u203a Ceiling Lights \u203a Island Lights",
+        "instruction_text": "i'm looking for the pendant lights for ceiling lights for living room, and price lower than 80.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 80.0,
+        "goal_options": [
+          "antique"
+        ],
+        "weight": 1,
+        "task_id": 19,
+        "question": "i'm looking for the pendant lights for ceiling lights for living room, and price lower than 80.00 dollars"
+      },
+      {
+        "asin": "B01H7ENCMO",
+        "category": "fashion",
+        "query": "men's jeans",
+        "name": "Signature by Levi Strauss & Co. Gold Label Men's Carpenter Jeans",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Clothing \u203a Jeans",
+        "instruction_text": "i am looking for standard sized levi strauss & co. men's carpenter jeans that are machine washable, and price lower than 60.00 dollars",
+        "attributes": [
+          "machine wash"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "standard"
+        ],
+        "weight": 1,
+        "task_id": 20,
+        "question": "i am looking for standard sized levi strauss & co. men's carpenter jeans that are machine washable, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B081SGNY71",
+        "category": "beauty",
+        "query": "toothpaste",
+        "name": "Pasta de Dientes blanqueadora Activado Elimina Mal Aliento Manchas Mint Toothpas",
+        "product_category": "Beauty & Personal Care \u203a Oral Care \u203a Toothpaste",
+        "instruction_text": "i  need fluoide free toothpaste for fresh breath, and price lower than 50.00 dollars",
+        "attributes": [
+          "fluoride free",
+          "fresh breath"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 21,
+        "question": "i  need fluoide free toothpaste for fresh breath, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B096M1D621",
+        "category": "garden",
+        "query": "bedframes",
+        "name": "LEEKOUS STERXONE Best Wooden Daybed with Trundle Bed and Two Storage Drawers, Elegant Daybed Frame Can be Extendable from Twin to King Size, Kids House Bed Sofa Bed for Living Room Bedroom (White)",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Bedroom Furniture \u203a Beds, Frames & Bases \u203a Beds",
+        "instruction_text": "i want to buy a gray a gray color daybed in twin size with a wooden frame, and price lower than 510.00 dollars",
+        "attributes": [
+          "twin size",
+          "wood frame"
+        ],
+        "price_upper": 510.0,
+        "goal_options": [
+          "grey"
+        ],
+        "weight": 1,
+        "task_id": 22,
+        "question": "i want to buy a gray a gray color daybed in twin size with a wooden frame, and price lower than 510.00 dollars"
+      },
+      {
+        "asin": "B07YB4LXM7",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "Red Vow Window Tier Curtains 45 inch Long, Privacy Protected Panel for Nursery,Room Drape for Laundry/Bathroom - Christmas Snow Landscape A Stag on a Skibob Semitranslucent Drapes for Kitchen",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Curtains & Drapes \u203a Panels",
+        "instruction_text": "i am looking for contemporary design privacy protected panel for living room, its size should be 52\" wide by 90\" length, and price lower than 40.00 dollars",
+        "attributes": [
+          "contemporary design",
+          "living room"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "52\" w by 90\" l"
+        ],
+        "weight": 1,
+        "task_id": 23,
+        "question": "i am looking for contemporary design privacy protected panel for living room, its size should be 52\" wide by 90\" length, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B000QSPX58",
+        "category": "grocery",
+        "query": "meat substitutes",
+        "name": "Earth's Best Organic Stage 2 Baby Food, Apples, 4 oz. Jar",
+        "product_category": "Baby Products \u203a Feeding \u203a Baby Foods \u203a Meals",
+        "instruction_text": "find me a jar of baby food that is certified organic. it should also be non gmo, and price lower than 130.00 dollars",
+        "attributes": [
+          "certified organic",
+          "non gmo"
+        ],
+        "price_upper": 130.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 24,
+        "question": "find me a jar of baby food that is certified organic. it should also be non gmo, and price lower than 130.00 dollars"
+      },
+      {
+        "asin": "B077S9R9KT",
+        "category": "grocery",
+        "query": "non-dairy milks",
+        "name": "ChocZero's Caramel Syrup. Sugar free, Low Carb, No preservatives. Thick and Rich. Sugar Alcohol free, Gluten Free, Dessert and Breakfast Topping. 1 Bottle(12oz)",
+        "product_category": "Grocery & Gourmet Food \u203a Pantry Staples \u203a Cooking & Baking \u203a Dessert Syrups & Sauces \u203a Chocolate",
+        "instruction_text": "i need a variety pack of gmo-free, low carb dessert syrups, and price lower than 30.00 dollars",
+        "attributes": [
+          "sugar free",
+          "gmo free"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "variety"
+        ],
+        "weight": 1,
+        "task_id": 25,
+        "question": "i need a variety pack of gmo-free, low carb dessert syrups, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B08GBZB5X8",
+        "category": "fashion",
+        "query": "women's sandals",
+        "name": "Dizadec Sandals for Women Wide Width,Womens Flat Sandals Summer Rhinestone Comfort Bohemian Flip Flop Shoes",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Sandals \u203a Flats",
+        "instruction_text": "i want help getting an open toe, non-slip sandal.  get the ones in blue in women's size 6, and price lower than 60.00 dollars",
+        "attributes": [
+          "open toe",
+          "non slip"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "z1_blue",
+          "6"
+        ],
+        "weight": 1,
+        "task_id": 26,
+        "question": "i want help getting an open toe, non-slip sandal.  get the ones in blue in women's size 6, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B093F94SZK",
+        "category": "garden",
+        "query": "bookcases",
+        "name": "XIANGGUI 1983 Bookshelves Storage Rack Children's Bookshelf Wood Book Cart Library Cart Shelving Storage Unit with Wheel Casters for Living Room Bedroom and Home Office Bookcase Office Storage Rack",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Home Office Furniture \u203a Bookcases",
+        "instruction_text": "i want a heavy duty fine wood bookcase for living room color white, and price lower than 480.00 dollars",
+        "attributes": [
+          "heavy duty",
+          "storage unit",
+          "living room"
+        ],
+        "price_upper": 480.0,
+        "goal_options": [
+          "white"
+        ],
+        "weight": 1,
+        "task_id": 27,
+        "question": "i want a heavy duty fine wood bookcase for living room color white, and price lower than 480.00 dollars"
+      },
+      {
+        "asin": "B09927SY88",
+        "category": "garden",
+        "query": "drafting tables",
+        "name": "Writing Computer Desk\uff0cfor Your Home Office, Work, Study, Printing, Writing, Gaming or Other Usage scenarios\uff0cHigh Gloss Gray 35.4\"x15.7\"x28.3\" Chipboard",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Home Office Furniture \u203a Home Office Desks",
+        "instruction_text": "i would like a grey 35\"x20\"x29\" home desk that's easy to clean, and price lower than 100.00 dollars",
+        "attributes": [
+          "easy clean"
+        ],
+        "price_upper": 100.0,
+        "goal_options": [
+          "35.4\"x19.7\"x29.1\""
+        ],
+        "weight": 1,
+        "task_id": 28,
+        "question": "i would like a grey 35\"x20\"x29\" home desk that's easy to clean, and price lower than 100.00 dollars"
+      },
+      {
+        "asin": "B09PD9N2R2",
+        "category": "beauty",
+        "query": "bathing accessories",
+        "name": "Dry Brushing Body Brush, Bath Brush with Detachable Long Handle, Body Brush Bath Scrubber for Exfoliate Dry Skin, Skin Massage, Dead Skin Removes",
+        "product_category": "Beauty & Personal Care \u203a Personal Care \u203a Bath & Bathing Accessories \u203a Bathing Accessories \u203a Bath & Body Brushes",
+        "instruction_text": "i'm looking for a body brush to remove dead skin, and price lower than 50.00 dollars",
+        "attributes": [
+          "dead skin"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 29,
+        "question": "i'm looking for a body brush to remove dead skin, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B00KXDW4EE",
+        "category": "garden",
+        "query": "cabinets",
+        "name": "Rev-A-Shelf 4WCTM-21DM2-162 Double 35-Quart Top Mount Pullout Kitchen Waste Trash Container Bin for 17.75 Inch Wide 1.63 Inch Faceframe Cabinet, White",
+        "product_category": "Home & Kitchen \u203a Storage & Organization \u203a Trash, Recycling & Compost \u203a Kitchen Trash Cans",
+        "instruction_text": "i need a 35-quart top mount pullout kitchen waste trash container easy install bin for 1.63 inch  wood frame cabinet, and price lower than 170.00 dollars",
+        "attributes": [
+          "easy install",
+          "wood frame"
+        ],
+        "price_upper": 170.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 30,
+        "question": "i need a 35-quart top mount pullout kitchen waste trash container easy install bin for 1.63 inch  wood frame cabinet, and price lower than 170.00 dollars"
+      },
+      {
+        "asin": "B08R1MJL3H",
+        "category": "garden",
+        "query": "candles",
+        "name": "Chloefu LAN Scented Candles Jasmine Candles Gifts for Women and Men 7.1oz|45 Hour Burning,Highly Scented & Long Lasting Soy Jar Candle, Candles for Home Scented 2 Pack",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Candles & Holders \u203a Candles \u203a Jar Candles",
+        "instruction_text": "i am looking for a soy wax candle that is white sage and 14 oz, and price lower than 40.00 dollars",
+        "attributes": [
+          "soy wax"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "white sage",
+          "14.1 oz-1 pack"
+        ],
+        "weight": 1,
+        "task_id": 31,
+        "question": "i am looking for a soy wax candle that is white sage and 14 oz, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B0009XQPHU",
+        "category": "electronics",
+        "query": "digital cameras",
+        "name": "Casio Exilim EX-Z120 7.2MP Digital Camera with 3x Anti Shake Optical Zoom",
+        "product_category": "Electronics \u203a Camera & Photo \u203a Digital Cameras \u203a Point & Shoot Digital Cameras",
+        "instruction_text": "please show me a digital camera. my favorite brand is casio, my husnband  told me about model exilim ex-z120 7. is there a batteries included too ? isn't it, and price lower than 140.00 dollars",
+        "attributes": [
+          "batteries included",
+          "optical zoom"
+        ],
+        "price_upper": 140.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 32,
+        "question": "please show me a digital camera. my favorite brand is casio, my husnband  told me about model exilim ex-z120 7. is there a batteries included too ? isn't it, and price lower than 140.00 dollars"
+      },
+      {
+        "asin": "B08Z8LYMMX",
+        "category": "beauty",
+        "query": "makeup sets",
+        "name": "Chandelli Toiletry Bag for Traveling Women use as a Travel Makeup Bag for Women and Travel Size Toiletries Kit, Perfect Gifts for Women (Mauve)",
+        "product_category": "Beauty & Personal Care \u203a Tools & Accessories \u203a Bags & Cases \u203a Cosmetic Bags",
+        "instruction_text": "i would like a mauve travel size cosmetic bag, and price lower than 60.00 dollars",
+        "attributes": [
+          "travel size"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "mauve"
+        ],
+        "weight": 1,
+        "task_id": 33,
+        "question": "i would like a mauve travel size cosmetic bag, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B078N9319K",
+        "category": "garden",
+        "query": "mattresses",
+        "name": "Mattress Solution 10\" Fully Plush Innerspring Tight Top Mattress and Split Box Spring/Foundation Set with Frame, No Assembly Required, King, Comfort Rest Collection",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Bedroom Furniture \u203a Mattresses & Box Springs \u203a Mattress & Box Spring Sets",
+        "instruction_text": "i need to buy a full sized mattress and box spring set. it should come fully assembled. look for style 225zf-4, and price lower than 660.00 dollars",
+        "attributes": [
+          "fully assembled"
+        ],
+        "price_upper": 660.0,
+        "goal_options": [
+          "full xl",
+          "225zf-4 | 6xl-2s"
+        ],
+        "weight": 1,
+        "task_id": 34,
+        "question": "i need to buy a full sized mattress and box spring set. it should come fully assembled. look for style 225zf-4, and price lower than 660.00 dollars"
+      },
+      {
+        "asin": "B09QHR7BZ6",
+        "category": "fashion",
+        "query": "women's flats",
+        "name": "OPFWTYNAW Women's Fashion Stilettos Open Toe Pump Heel Sandals Breathable Lace-up Shoes Casual Sandals",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Sandals \u203a Heeled Sandals",
+        "instruction_text": "i'm looking for a pair of open toe women's sandals with a leather sole.  i want the green ones in size six, and price lower than 140.00 dollars",
+        "attributes": [
+          "open toe",
+          "leather sole"
+        ],
+        "price_upper": 140.0,
+        "goal_options": [
+          "green-26#",
+          "6"
+        ],
+        "weight": 1,
+        "task_id": 35,
+        "question": "i'm looking for a pair of open toe women's sandals with a leather sole.  i want the green ones in size six, and price lower than 140.00 dollars"
+      },
+      {
+        "asin": "B000RNNI0O",
+        "category": "beauty",
+        "query": "women's fragrance",
+        "name": "Diable Bleu Women Eau De Parfum Spray, 3.4 Ounce",
+        "product_category": "Beauty & Personal Care \u203a Fragrance \u203a Women's \u203a Eau de Parfum",
+        "instruction_text": "i am interested in a long lasting perfume, and price lower than 50.00 dollars",
+        "attributes": [
+          "long lasting"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 36,
+        "question": "i am interested in a long lasting perfume, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B08SJLZD59",
+        "category": "electronics",
+        "query": "iphone accessories",
+        "name": "OTTARTAKS American Flag iPhone 12 Case with Screen Protector, Retro Old USA Flag iPhone 12 Pro Case for Men Boys, 3-in-1 Heavy Duty Full-Body Shockproof Protection Cover for iPhone 12/12pro",
+        "product_category": "Cell Phones & Accessories \u203a Cases, Holsters & Sleeves \u203a Basic Cases",
+        "instruction_text": "i'm looking for a white case for iphone 12 with american flag printed and wireless charging, and price lower than 30.00 dollars",
+        "attributes": [
+          "wireless charging"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "white"
+        ],
+        "weight": 1,
+        "task_id": 37,
+        "question": "i'm looking for a white case for iphone 12 with american flag printed and wireless charging, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B0742C39SB",
+        "category": "garden",
+        "query": "decorative pillows",
+        "name": "VERCART Large Wedge Pillow Back Cushion Decorative Throw Reading Lumbar Backrest Pillows Headboard for Bed Sofa Day Bed with Removable Cover Corduroy Deep Blue Queen",
+        "product_category": "Home & Kitchen \u203a Bedding \u203a Bed Pillows & Positioners \u203a Reading & Bed Rest Pillows",
+        "instruction_text": "i am looking for some gray living room pillows, and price lower than 150.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 150.0,
+        "goal_options": [
+          "gray"
+        ],
+        "weight": 1,
+        "task_id": 38,
+        "question": "i am looking for some gray living room pillows, and price lower than 150.00 dollars"
+      },
+      {
+        "asin": "B08XJ2PT2C",
+        "category": "beauty",
+        "query": "hair cutting tools",
+        "name": "Skull King Barber Cape, Hair Cutting Cape with Hook sucker, Professional Salon Cape, Hairdressing Haircut Cape - Waterproof Barber Polyester Cape, for Hairdresser Styling & Home, 55'' x 65''",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Cutting Tools \u203a Hair Cutting Kits",
+        "instruction_text": "i'm looking for a skull king barber cape with hook sucker, and price lower than 50.00 dollars",
+        "attributes": [
+          "hair cutting"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "starry sky 5"
+        ],
+        "weight": 1,
+        "task_id": 39,
+        "question": "i'm looking for a skull king barber cape with hook sucker, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B08G1B3LFJ",
+        "category": "fashion",
+        "query": "women's sandals",
+        "name": "Clarks Women's Lexi Jade Flat Sandal",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Sandals \u203a Flats",
+        "instruction_text": "i'm looking for a flats made of ethylene vinyl. choose the ones in tan color and size 9.5 narrow, and price lower than 100.00 dollars",
+        "attributes": [
+          "ethylene vinyl"
+        ],
+        "price_upper": 100.0,
+        "goal_options": [
+          "tan leather metallic synthetic",
+          "9.5 narrow"
+        ],
+        "weight": 1,
+        "task_id": 40,
+        "question": "i'm looking for a flats made of ethylene vinyl. choose the ones in tan color and size 9.5 narrow, and price lower than 100.00 dollars"
+      },
+      {
+        "asin": "B09HC7FPDC",
+        "category": "fashion",
+        "query": "women's flats",
+        "name": "NOLDARES Boots for Women Winter Fashion Leopard Zip Up Pointed Toe Ankle Boots Winter Low Chunky Square Heel Booties",
+        "product_category": "Sports & Outdoors \u203a Sports & Outdoor Recreation Accessories \u203a Ball Storage",
+        "instruction_text": "i am looking for winter warm ankle boots for women. my size is 7.5, and price lower than 40.00 dollars",
+        "attributes": [
+          "winter warm"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "7.5"
+        ],
+        "weight": 1,
+        "task_id": 41,
+        "question": "i am looking for winter warm ankle boots for women. my size is 7.5, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B077YSK7SK",
+        "category": "garden",
+        "query": "bar stools",
+        "name": "Coaster CO- Adjustable Bar Stool, White",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Game & Recreation Room Furniture \u203a Home Bar Furniture \u203a Barstools",
+        "instruction_text": "i am looking for a white item barstools, and price lower than 110.00 dollars",
+        "attributes": [
+          "white item"
+        ],
+        "price_upper": 110.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 42,
+        "question": "i am looking for a white item barstools, and price lower than 110.00 dollars"
+      },
+      {
+        "asin": "B099RPD1Y9",
+        "category": "beauty",
+        "query": "scrubs & body treatments",
+        "name": "Molain 2 Pcs Natural Viscose Korean Exfoliating Mitt Asian Deep Body Scrub Exfoliating Glove Bath Shower Washcloth Removes Dead Skin Loofahs Sponges Fake Tan Remover(Green)",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Body \u203a Body Scrubs",
+        "instruction_text": "i would like a pink body scrub for dry skin, and price lower than 40.00 dollars",
+        "attributes": [
+          "dry skin"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "pink"
+        ],
+        "weight": 1,
+        "task_id": 43,
+        "question": "i would like a pink body scrub for dry skin, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B099RPD1Y9",
+        "category": "beauty",
+        "query": "scrubs & body treatments",
+        "name": "Molain 2 Pcs Natural Viscose Korean Exfoliating Mitt Asian Deep Body Scrub Exfoliating Glove Bath Shower Washcloth Removes Dead Skin Loofahs Sponges Fake Tan Remover(Green)",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Body \u203a Body Scrubs",
+        "instruction_text": "i'm looking for a body scrub for dead and dry skin. also choose black colored one, and price lower than 40.00 dollars",
+        "attributes": [
+          "dead skin",
+          "dry skin"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "black"
+        ],
+        "weight": 1,
+        "task_id": 44,
+        "question": "i'm looking for a body scrub for dead and dry skin. also choose black colored one, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B06XR97NGM",
+        "category": "garden",
+        "query": "dressers",
+        "name": "Modus Furniture Paragon Eight-Drawer Dresser, Black",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Bedroom Furniture \u203a Dressers",
+        "instruction_text": "i would like a six drawer natural walnut dresser with bronze finishes",
+        "attributes": [
+          "bronze finish"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [
+          "adler - natural walnut",
+          "6-drawer"
+        ],
+        "weight": 1,
+        "task_id": 45,
+        "question": "i would like a six drawer natural walnut dresser with bronze finishes"
+      },
+      {
+        "asin": "B06XR97NGM",
+        "category": "garden",
+        "query": "dressers",
+        "name": "Modus Furniture Paragon Eight-Drawer Dresser, Black",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Bedroom Furniture \u203a Dressers",
+        "instruction_text": "i am looking for a 9 drawer dresser with a bronze finish",
+        "attributes": [
+          "bronze finish"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [
+          "9-drawer"
+        ],
+        "weight": 1,
+        "task_id": 46,
+        "question": "i am looking for a 9 drawer dresser with a bronze finish"
+      },
+      {
+        "asin": "B09QCTSSMN",
+        "category": "fashion",
+        "query": "men's casual button-down shirts",
+        "name": "Hawaiian Shirt Mens Short Sleeve Aloha Beach Shirt Summer Linen Button Down Tropical Holiday Beach Shirts",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Clothing \u203a Shirts \u203a Casual Button-Down Shirts",
+        "instruction_text": "i'm looking for a men's red button down casual shirt that is a large slim fit, and price lower than 50.00 dollars",
+        "attributes": [
+          "slim fit"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "red",
+          "large"
+        ],
+        "weight": 1,
+        "task_id": 47,
+        "question": "i'm looking for a men's red button down casual shirt that is a large slim fit, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B08KGN21R3",
+        "category": "beauty",
+        "query": "teeth whitening",
+        "name": "LOVE YOUR TEETH Whitening Device Kit - Teeth Whitening System with LED Blue Light Mouthpiece - Home Teeth Whitener - Clinically Tested Whitening Kit for Stained Teeth - 7 Shades Whiter Teeth in 7 Days",
+        "product_category": "Beauty & Personal Care \u203a Oral Care \u203a Teeth Whitening \u203a Whitening Kits",
+        "instruction_text": "i want to find a teeth whitening device kit for sensitive teeth, and price lower than 90.00 dollars",
+        "attributes": [
+          "teeth whitening",
+          "sensitive teeth"
+        ],
+        "price_upper": 90.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 48,
+        "question": "i want to find a teeth whitening device kit for sensitive teeth, and price lower than 90.00 dollars"
+      },
+      {
+        "asin": "B01A99GE8I",
+        "category": "grocery",
+        "query": "grocery cookies",
+        "name": "Irish Fortune Cookies In A Gift Box \u2013 St Patrick's Day Gift \u2013 8 Pieces Traditional Vanilla Flavor Individually Wrapped \u2013 Kosher Certified",
+        "product_category": "Grocery & Gourmet Food \u203a Breads & Bakery \u203a Cookies \u203a Fortune",
+        "instruction_text": "i am looking for kosher certified irish fortune cookies with pattern name :halloween, and price lower than 50.00 dollars",
+        "attributes": [
+          "kosher certified"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "halloween"
+        ],
+        "weight": 1,
+        "task_id": 49,
+        "question": "i am looking for kosher certified irish fortune cookies with pattern name :halloween, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B09PJ72WM1",
+        "category": "fashion",
+        "query": "women's pants",
+        "name": "Pants for Women High Elasticity High Waist Cutout Solid Strappy Casual Bell-Bottomed Pants",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Pants \u203a Casual",
+        "instruction_text": "i need white womens high waist bell-bottomed pants in size x-large, and price lower than 20.00 dollars",
+        "attributes": [
+          "high waist"
+        ],
+        "price_upper": 20.0,
+        "goal_options": [
+          "white",
+          "x-large"
+        ],
+        "weight": 1,
+        "task_id": 50,
+        "question": "i need white womens high waist bell-bottomed pants in size x-large, and price lower than 20.00 dollars"
+      },
+      {
+        "asin": "B07GGXP2FC",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "OstepDecor Custom 60 x 24 Inch Clear Table Protector Rectangle, 1.5mm Thick Plastic Table Cover Clear Table Pad Vinyl Tablecloth Protector, Large Clear Desk Pad Mat for Coffee Table, Countertop",
+        "product_category": "Home & Kitchen \u203a Kitchen & Dining \u203a Kitchen & Table Linens \u203a Accessories \u203a Table Pads",
+        "instruction_text": "i want to find a 34x72 inch round table protector that is 2 millimeters thick. it needs to be made of stainless steel, and price lower than 60.00 dollars",
+        "attributes": [
+          "stainless steel"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "round new clear 2mm",
+          "34 x 72 inches"
+        ],
+        "weight": 1,
+        "task_id": 51,
+        "question": "i want to find a 34x72 inch round table protector that is 2 millimeters thick. it needs to be made of stainless steel, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B07GGXP2FC",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "OstepDecor Custom 60 x 24 Inch Clear Table Protector Rectangle, 1.5mm Thick Plastic Table Cover Clear Table Pad Vinyl Tablecloth Protector, Large Clear Desk Pad Mat for Coffee Table, Countertop",
+        "product_category": "Home & Kitchen \u203a Kitchen & Dining \u203a Kitchen & Table Linens \u203a Accessories \u203a Table Pads",
+        "instruction_text": "i'm looking for heavy duty table pads made of stainless steel which is easy to clean. also, choose new version clear 1.5 mm pads with size 39.4* 94.5 inches, and price lower than 70.00 dollars",
+        "attributes": [
+          "heavy duty",
+          "easy clean",
+          "stainless steel"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "new version clear 1.5mm",
+          "39.4 x 94.5 inches"
+        ],
+        "weight": 1,
+        "task_id": 52,
+        "question": "i'm looking for heavy duty table pads made of stainless steel which is easy to clean. also, choose new version clear 1.5 mm pads with size 39.4* 94.5 inches, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B08GYF3H6N",
+        "category": "grocery",
+        "query": "meat & seafood",
+        "name": "Pederson\u2019s Farms, Old World Kielbasa Rope Sausage, Whole30 (4 Pack, Use / Freeze) 14oz - No Sugar Added, Uncured , Keto Paleo Diet Friendly, No Nitrates Nitrites, Gluten Free, Made in the US",
+        "product_category": "Grocery & Gourmet Food \u203a Frozen \u203a Meats \u203a Sausage & Bacon",
+        "instruction_text": "i need an old fashioned rope sausage without gluten, and price lower than 50.00 dollars",
+        "attributes": [
+          "old fashioned",
+          "gluten free"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "old world style"
+        ],
+        "weight": 1,
+        "task_id": 53,
+        "question": "i need an old fashioned rope sausage without gluten, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B08GYF3H6N",
+        "category": "grocery",
+        "query": "meat & seafood",
+        "name": "Pederson\u2019s Farms, Old World Kielbasa Rope Sausage, Whole30 (4 Pack, Use / Freeze) 14oz - No Sugar Added, Uncured , Keto Paleo Diet Friendly, No Nitrates Nitrites, Gluten Free, Made in the US",
+        "product_category": "Grocery & Gourmet Food \u203a Frozen \u203a Meats \u203a Sausage & Bacon",
+        "instruction_text": "i want keto friendly old world kielbasa rope sausage, and price lower than 60.00 dollars",
+        "attributes": [
+          "keto friendly"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "old world style"
+        ],
+        "weight": 1,
+        "task_id": 54,
+        "question": "i want keto friendly old world kielbasa rope sausage, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B08Q7RNY1W",
+        "category": "beauty",
+        "query": "deodorants & antiperspirants",
+        "name": "NATURE | Natural | Organic | Deodorant Spray | TAHITIAN MIST",
+        "product_category": "Beauty & Personal Care \u203a Personal Care \u203a Deodorants & Antiperspirants \u203a Deodorant",
+        "instruction_text": "i need a long lasting organic deodorant, and price lower than 40.00 dollars",
+        "attributes": [
+          "long lasting"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 55,
+        "question": "i need a long lasting organic deodorant, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B07RT28DLG",
+        "category": "garden",
+        "query": "furniture sets",
+        "name": "Jay Franco Disney Minnie Mouse Lashes Bed Set, Full",
+        "product_category": "Home & Kitchen \u203a Bedding \u203a Kids' Bedding \u203a Comforters & Sets \u203a Comforter Sets",
+        "instruction_text": "i want a super soft jay franco disney minnie mouse twin bed set, and price lower than 120.00 dollars",
+        "attributes": [
+          "super soft"
+        ],
+        "price_upper": 120.0,
+        "goal_options": [
+          "twin"
+        ],
+        "weight": 1,
+        "task_id": 56,
+        "question": "i want a super soft jay franco disney minnie mouse twin bed set, and price lower than 120.00 dollars"
+      },
+      {
+        "asin": "B01FWM4A2O",
+        "category": "electronics",
+        "query": "cd players & recorders",
+        "name": "Marantz CD6006 Premium Audio Sound Through a CD Player and iDevices (iPhone and iPod) | Newly Developed Headphone Amp & USB Port | Ideal Pair for Marantz PM6006 and NA6006, Black",
+        "product_category": "Electronics \u203a Home Audio \u203a Stereo System Components \u203a CD & Tape Players \u203a CD Players",
+        "instruction_text": "i would ike a cd player that comes with aaa batteries and is in the model pm6006",
+        "attributes": [
+          "aaa batteries"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [
+          "pm6006"
+        ],
+        "weight": 1,
+        "task_id": 57,
+        "question": "i would ike a cd player that comes with aaa batteries and is in the model pm6006"
+      },
+      {
+        "asin": "B08G8DY2LH",
+        "category": "electronics",
+        "query": "lenses",
+        "name": "QIVYNSRY Filter Case 5 Pockets Camera Lens Carrying Filters Wallet Case Pouch Photography Filter Carry Bag for 25/49/52/55/58/67/72/77/82/86/95MM Round or Square Filters",
+        "product_category": "Electronics \u203a Camera & Photo \u203a Bags & Cases \u203a Filter Cases",
+        "instruction_text": "i want a qivynsry filter carrying case, and price lower than 30.00 dollars",
+        "attributes": [
+          "carrying case"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 58,
+        "question": "i want a qivynsry filter carrying case, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B01CU5Y0PS",
+        "category": "grocery",
+        "query": "paper & plastic household supplies",
+        "name": "Cotton Candy Express 3 Flavor Cotton Candy Sugar Pack with Cherry, Grape, Blue Raspberry, 11-Ounce Jars",
+        "product_category": "Grocery & Gourmet Food \u203a Snacks & Sweets \u203a Candy & Chocolate \u203a Hard Candy",
+        "instruction_text": "i'd like to buy some cotton candy for a baby shower, and price lower than 50.00 dollars",
+        "attributes": [
+          "baby shower"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 59,
+        "question": "i'd like to buy some cotton candy for a baby shower, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B09MCXBFW1",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "Blackout Window Film Peony Roses and Cactus Covering Privacy Film Shower Window Cling",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Window Stickers & Films \u203a Window Films",
+        "instruction_text": "i am looking for a multi-colored blackout window film for my living room, and price lower than 60.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "multi-13124"
+        ],
+        "weight": 1,
+        "task_id": 60,
+        "question": "i am looking for a multi-colored blackout window film for my living room, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B07V6D1G16",
+        "category": "fashion",
+        "query": "women's dresses",
+        "name": "Women's High-Low Prom Dresses with Pockets Lace Chiffon Formal Evening Party Gowns with Sleeves P053",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Dresses",
+        "instruction_text": "i am looking for a women's wine red prom dress with a lace closure, and price lower than 110.00 dollars",
+        "attributes": [
+          "lace closure"
+        ],
+        "price_upper": 110.0,
+        "goal_options": [
+          "wine red"
+        ],
+        "weight": 1,
+        "task_id": 61,
+        "question": "i am looking for a women's wine red prom dress with a lace closure, and price lower than 110.00 dollars"
+      },
+      {
+        "asin": "B09K8D4JRX",
+        "category": "beauty",
+        "query": "scalp treatments",
+        "name": "The INKEY List Hyaluronic Acid Hydrating Hair Treatment to Reduce Frizz and Brittlness to Improve Shine 100ml, (IH001KM)",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Shampoo & Conditioner \u203a Deep Conditioners",
+        "instruction_text": "i am looking  a  hyaluronic acid deep conditioner for hair treatment of dry har to improve smoothness, and price lower than 130.00 dollars",
+        "attributes": [
+          "hyaluronic acid",
+          "hair treatment",
+          "dry hair"
+        ],
+        "price_upper": 130.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 62,
+        "question": "i am looking  a  hyaluronic acid deep conditioner for hair treatment of dry har to improve smoothness, and price lower than 130.00 dollars"
+      },
+      {
+        "asin": "B08R3FV6P8",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "LooPoP Home Decor Window Curtains Floral Window Treatment Set with Silver Grommet Window Covering for Kitchen Cafe (1 Panel Drape,) Dandelion Blooms Nature",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Curtains & Drapes \u203a Panels",
+        "instruction_text": "i need a floral window curtain for my living room . and i choose the 52x72in with skulllop3455, and price lower than 90.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 90.0,
+        "goal_options": [
+          "skulllop3455",
+          "52x72in"
+        ],
+        "weight": 1,
+        "task_id": 63,
+        "question": "i need a floral window curtain for my living room . and i choose the 52x72in with skulllop3455, and price lower than 90.00 dollars"
+      },
+      {
+        "asin": "B08R3FV6P8",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "LooPoP Home Decor Window Curtains Floral Window Treatment Set with Silver Grommet Window Covering for Kitchen Cafe (1 Panel Drape,) Dandelion Blooms Nature",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Curtains & Drapes \u203a Panels",
+        "instruction_text": "i want to find a 52 x 84 inch set of living room curtains that are snowman colored, and price lower than 90.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 90.0,
+        "goal_options": [
+          "snowmangirl1lop5222",
+          "52x84in"
+        ],
+        "weight": 1,
+        "task_id": 64,
+        "question": "i want to find a 52 x 84 inch set of living room curtains that are snowman colored, and price lower than 90.00 dollars"
+      },
+      {
+        "asin": "B073WGFRM1",
+        "category": "beauty",
+        "query": "face makeup",
+        "name": "BaeBlu Organic Concealer, FULL Coverage Cover Up, 100% Natural, Made in USA, Flawless",
+        "product_category": "Beauty & Personal Care \u203a Makeup \u203a Face \u203a Concealers & Neutralizers",
+        "instruction_text": "i need a concealer for dark circles that is in the color sassy, and price lower than 60.00 dollars",
+        "attributes": [
+          "dark circles"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "sassy"
+        ],
+        "weight": 1,
+        "task_id": 65,
+        "question": "i need a concealer for dark circles that is in the color sassy, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B0746SNMQD",
+        "category": "beauty",
+        "query": "sensitivity treatments",
+        "name": "Diva stuff Pre-Swim Aqua Therapy Chlorine Neutralizing Body Moisturizing Lotion for Swimmers, Protects Skin from Chlorine and Salt Water, 8 oz - Made in the USA, Fresh South Pacific",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Body \u203a Moisturizers \u203a Lotions",
+        "instruction_text": "i want unscented sunscreen lotion for dry skin, and price lower than 50.00 dollars",
+        "attributes": [
+          "dry skin"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "unscented sunscreen"
+        ],
+        "weight": 1,
+        "task_id": 66,
+        "question": "i want unscented sunscreen lotion for dry skin, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B07KP16BSQ",
+        "category": "electronics",
+        "query": "printers & scanners",
+        "name": "Refurbished HP LaserJet Enterprise M4555FSKM CE504A Laser Printer Copier Fax Scanner M4555 with toner & 90-day Warranty CRHPM4555fskm",
+        "product_category": "Office Products \u203a Office Electronics \u203a Printers & Accessories \u203a Printers",
+        "instruction_text": "i need a certified refurbished hp laser printer",
+        "attributes": [
+          "certified refurbished"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 67,
+        "question": "i need a certified refurbished hp laser printer"
+      },
+      {
+        "asin": "B08DTJCR5M",
+        "category": "beauty",
+        "query": "refillable containers",
+        "name": "YARUMI 20 Pack Cute Lipgloss Empty Refillable Tubes,8ml Beverage Bottle-Shaped Lip Gloss Containers with Applicator,Cosmetic Reusable Lipstick Sample Vials Lip Glaze Clear Bottle with Rubber Stopper",
+        "product_category": "Beauty & Personal Care \u203a Tools & Accessories \u203a Bags & Cases",
+        "instruction_text": "i need a bag of non-toxic refillable lip gloss tubes, and price lower than 40.00 dollars",
+        "attributes": [
+          "non toxic"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 68,
+        "question": "i need a bag of non-toxic refillable lip gloss tubes, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B09GPJVQNT",
+        "category": "fashion",
+        "query": "women's pants",
+        "name": "BHSJ Women Christmas Stretchy Leggings Snowman Snowflake Print Trousers Skinny Pants for Yoga Running Pilates Gym Pants",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Active \u203a Active Pants",
+        "instruction_text": "i need a relaxed fit daily wear gym pants for daily wear. pick an xx-large one, and price lower than 30.00 dollars",
+        "attributes": [
+          "relaxed fit",
+          "daily wear"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "xx-large"
+        ],
+        "weight": 1,
+        "task_id": 69,
+        "question": "i need a relaxed fit daily wear gym pants for daily wear. pick an xx-large one, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B00THW4ZB2",
+        "category": "fashion",
+        "query": "men's shorts",
+        "name": "TOOLOUD Italian Flag - Italy Text Adult Lounge Shorts - Red or Black",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Clothing \u203a Sleep & Lounge \u203a Sleep Bottoms",
+        "instruction_text": "i need a machine wash, red tooloud italian flag the medium size, and price lower than 60.00 dollars",
+        "attributes": [
+          "machine wash"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "red",
+          "medium"
+        ],
+        "weight": 1,
+        "task_id": 70,
+        "question": "i need a machine wash, red tooloud italian flag the medium size, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B09FDW71SF",
+        "category": "fashion",
+        "query": "women's outdoor shoes",
+        "name": "Men Boots Casual Work Boots Pointed Toe Low Heel Stitching Boots For Women Wide Calf Fashion Square Heel Embroidered Cowboy Boots For Women Comfortable Thick Heel Outdoor Boots Mid-Pipe Couple Boots",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Boots \u203a Mid-Calf",
+        "instruction_text": "i am looking for a black  knee high mid-calf, and price lower than 60.00 dollars",
+        "attributes": [
+          "knee high"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 71,
+        "question": "i am looking for a black  knee high mid-calf, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B09JBL4FQG",
+        "category": "electronics",
+        "query": "lenses",
+        "name": "Hoerrye 3 PCS Camera Lens Protector for iPhone 13 and iPhone 13 Mini,Ultra Clear HD Tempered Glass,Aluminum Alloy Lens Screen Ring Cover Film [Anti Scratch][Night Circle] - Pink",
+        "product_category": "Cell Phones & Accessories \u203a Accessories \u203a Maintenance, Upkeep & Repairs \u203a Screen Protectors",
+        "instruction_text": "i am looking for a camera lens protector for iphone 13 made up of aluminum alloy. also choose pink color, and price lower than 50.00 dollars",
+        "attributes": [
+          "aluminum alloy"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "pink"
+        ],
+        "weight": 1,
+        "task_id": 72,
+        "question": "i am looking for a camera lens protector for iphone 13 made up of aluminum alloy. also choose pink color, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B0834QQR5F",
+        "category": "fashion",
+        "query": "men's mules & clogs",
+        "name": "Crocs Unisex-Adult Classic Animal Clogs | Leopard Print Shoes for Women",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Mules & Clogs",
+        "instruction_text": "i am looking for a  electric pink zebra mules & clogs of ethylene vinyl, and price lower than 50.00 dollars",
+        "attributes": [
+          "ethylene vinyl"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "electric pink zebra"
+        ],
+        "weight": 1,
+        "task_id": 73,
+        "question": "i am looking for a  electric pink zebra mules & clogs of ethylene vinyl, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B09BK2WGGX",
+        "category": "garden",
+        "query": "drafting tables",
+        "name": "Correll 30\"x72\" Commercial Duty Folding Table, Gray Granite Melamine Top, Made in The USA, Portable, Strong Steel Apron CBZF3072M-15",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Game & Recreation Room Furniture \u203a Folding Tables & Chairs \u203a Folding Tables",
+        "instruction_text": "i am looking for heavy duty folding table of black granite color, and price lower than 190.00 dollars",
+        "attributes": [
+          "heavy duty"
+        ],
+        "price_upper": 190.0,
+        "goal_options": [
+          "black granite"
+        ],
+        "weight": 1,
+        "task_id": 74,
+        "question": "i am looking for heavy duty folding table of black granite color, and price lower than 190.00 dollars"
+      },
+      {
+        "asin": "B09NKV2PYS",
+        "category": "beauty",
+        "query": "skin care tools",
+        "name": "Ice Roller For Face and Eye, Beauty Ice Contour Mold Skin Care Tool, Ice Cube Facial Massage Ball, Brighten Skin, De-Puff Eye Bags, Reduce Acne Blue",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Eyes",
+        "instruction_text": "i need an easy use but high quality beauty ice contour mold skin care tool. pink color will work for me, and price lower than 30.00 dollars",
+        "attributes": [
+          "easy use",
+          "high quality"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "pink"
+        ],
+        "weight": 1,
+        "task_id": 75,
+        "question": "i need an easy use but high quality beauty ice contour mold skin care tool. pink color will work for me, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B08N4T81LQ",
+        "category": "grocery",
+        "query": "toothpicks",
+        "name": "Ercaido 24 Pack Blue Glitter Oh Baby Cupcake Toppers Gender Reveal Cupcake Picks Decorations for Baby Shower Boys Birthday Party Supplies",
+        "product_category": "Grocery & Gourmet Food \u203a Pantry Staples \u203a Cooking & Baking \u203a Frosting, Icing & Decorations \u203a Cupcake Toppers",
+        "instruction_text": "i am looking for a pink cupcake toppers, cupcake picks for baby shower birthday party party supplies, and price lower than 30.00 dollars",
+        "attributes": [
+          "cupcake picks",
+          "baby shower",
+          "birthday party",
+          "party supplies"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "pink"
+        ],
+        "weight": 1,
+        "task_id": 76,
+        "question": "i am looking for a pink cupcake toppers, cupcake picks for baby shower birthday party party supplies, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B07JFRBHB8",
+        "category": "beauty",
+        "query": "hair coloring products",
+        "name": "White Hair Color Wax Pomades 4.23 oz - Natural Hair Coloring Wax Material Disposable Hair Styling Clays Ash for Cosplay, Party (White)",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Styling Products \u203a Clays",
+        "instruction_text": "i'm looking for a black hair styling product that is made from natural ingredients and easy to use, and price lower than 30.00 dollars",
+        "attributes": [
+          "easy use",
+          "natural ingredients",
+          "hair styling"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "black"
+        ],
+        "weight": 1,
+        "task_id": 77,
+        "question": "i'm looking for a black hair styling product that is made from natural ingredients and easy to use, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B09RV2KXB4",
+        "category": "fashion",
+        "query": "women's coats, jackets & vests",
+        "name": "Women's Faux Wool Thin Coat Elegant Lapel Trench Jacket Ladies Warm Slim Long Overcoat Classic All Match Outwear",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Coats, Jackets & Vests \u203a Wool & Pea Coats",
+        "instruction_text": "i want to buy long sleeve daily wear clothing of 95% cotton, 5% polyester particularly in black color, and price lower than 120.00 dollars",
+        "attributes": [
+          "long sleeve",
+          "daily wear"
+        ],
+        "price_upper": 120.0,
+        "goal_options": [
+          "black_c008",
+          "xx-large"
+        ],
+        "weight": 1,
+        "task_id": 78,
+        "question": "i want to buy long sleeve daily wear clothing of 95% cotton, 5% polyester particularly in black color, and price lower than 120.00 dollars"
+      },
+      {
+        "asin": "B095TWK6H7",
+        "category": "beauty",
+        "query": "makeup sets",
+        "name": "MODA Tie Dye, 5pc Full Face Makeup Brush Set, Includes - Blush, Complexion, Shadow, Crease, & Liner Brushes, Dreamy Blue",
+        "product_category": "Beauty & Personal Care \u203a Tools & Accessories \u203a Makeup Brushes & Tools \u203a Brush Sets",
+        "instruction_text": "i'm looking for a set of makeup brushes in the color peaceful purple to help me with my eyeshadow makeup, and price lower than 40.00 dollars",
+        "attributes": [
+          "eye shadow"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "peaceful purple"
+        ],
+        "weight": 1,
+        "task_id": 79,
+        "question": "i'm looking for a set of makeup brushes in the color peaceful purple to help me with my eyeshadow makeup, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B095TWK6H7",
+        "category": "beauty",
+        "query": "makeup sets",
+        "name": "MODA Tie Dye, 5pc Full Face Makeup Brush Set, Includes - Blush, Complexion, Shadow, Crease, & Liner Brushes, Dreamy Blue",
+        "product_category": "Beauty & Personal Care \u203a Tools & Accessories \u203a Makeup Brushes & Tools \u203a Brush Sets",
+        "instruction_text": "i'm looking for a set of makeup brushes in the color peaceful purple to help me with my eyeshadow makeup, and price lower than 40.00 dollars",
+        "attributes": [
+          "eye shadow"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "peaceful purple"
+        ],
+        "weight": 1,
+        "task_id": 80,
+        "question": "i'm looking for a set of makeup brushes in the color peaceful purple to help me with my eyeshadow makeup, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B09P4WGX3Z",
+        "category": "garden",
+        "query": "dining chairs",
+        "name": "CIMOTA PU Leather Black Dining Chairs Set of 2, Upholstered Modern Tufted Dining Room Chairs Nailhead Trim Armless Side Chair with Solid Wood for Kitchen/Dining Room/Bedroom (Ring on The Back)",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Dining Room Furniture \u203a Chairs",
+        "instruction_text": "i am looking for cimota pu leather dining chairs in a set of 2, and price lower than 380.00 dollars",
+        "attributes": [
+          "dining room"
+        ],
+        "price_upper": 380.0,
+        "goal_options": [
+          "set of 4"
+        ],
+        "weight": 1,
+        "task_id": 81,
+        "question": "i am looking for cimota pu leather dining chairs in a set of 2, and price lower than 380.00 dollars"
+      },
+      {
+        "asin": "B09FQ19M1N",
+        "category": "garden",
+        "query": "ottomans",
+        "name": "Rectangle Lift Top Storage Ottoman Bench in Upholstered Upholstered Faux Leather, Footrest Stool, Coffee Table for Living Room and Kids Room, Traditional(Orange,40x42x45cm)",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Accent Furniture \u203a Ottomans",
+        "instruction_text": "i'm looking for brown color upholstered faux leather footrest stool for living room, its size should be 100x42x45cm, and price lower than 330.00 dollars",
+        "attributes": [
+          "faux leather",
+          "living room"
+        ],
+        "price_upper": 330.0,
+        "goal_options": [
+          "brown",
+          "100x42x45cm"
+        ],
+        "weight": 1,
+        "task_id": 82,
+        "question": "i'm looking for brown color upholstered faux leather footrest stool for living room, its size should be 100x42x45cm, and price lower than 330.00 dollars"
+      },
+      {
+        "asin": "B07R9M1GJM",
+        "category": "fashion",
+        "query": "women's pants",
+        "name": "BUBBLELIME 29\"/31\"/33\"/35\"/37\" 3 Styles Women's High Waist Bootcut Yoga Pants Basic/Out Pockets Workout Tummy Control Flare",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Sport Specific Clothing \u203a Yoga \u203a Women \u203a Pants",
+        "instruction_text": "i need basic nylon high waist pants that are xx-large with a 37 inch inseam, and price lower than 70.00 dollars",
+        "attributes": [
+          "high waist"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "basic nylon_heathernavy",
+          "xx-large | 37\" inseam"
+        ],
+        "weight": 1,
+        "task_id": 83,
+        "question": "i need basic nylon high waist pants that are xx-large with a 37 inch inseam, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B07R9M1GJM",
+        "category": "fashion",
+        "query": "women's pants",
+        "name": "BUBBLELIME 29\"/31\"/33\"/35\"/37\" 3 Styles Women's High Waist Bootcut Yoga Pants Basic/Out Pockets Workout Tummy Control Flare",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Sport Specific Clothing \u203a Yoga \u203a Women \u203a Pants",
+        "instruction_text": "i would like a large heather gray pair of high waisted yoga pants, and price lower than 70.00 dollars",
+        "attributes": [
+          "high waist"
+        ],
+        "price_upper": 70.0,
+        "goal_options": [
+          "basic cotton_heathergray(1)",
+          "large | 37\" inseam"
+        ],
+        "weight": 1,
+        "task_id": 84,
+        "question": "i would like a large heather gray pair of high waisted yoga pants, and price lower than 70.00 dollars"
+      },
+      {
+        "asin": "B091SV7HJ7",
+        "category": "garden",
+        "query": "sofas and couches",
+        "name": "Lexicon Dani 3-Piece Faux Leather Tufted Sectional Sofa with Right Chaise and Ottoman, Black",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Living Room Furniture \u203a Living Room Sets",
+        "instruction_text": "i want a grey 3-piece faux leather tufted sectional sofa",
+        "attributes": [
+          "faux leather"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [
+          "grey"
+        ],
+        "weight": 1,
+        "task_id": 85,
+        "question": "i want a grey 3-piece faux leather tufted sectional sofa"
+      },
+      {
+        "asin": "B09KGJQQ4B",
+        "category": "electronics",
+        "query": "signal boosters",
+        "name": "5G Cell Phone Signal Booster for Home and Office Compatible with All US Carriers Verizon, AT&T, Straight Talk | Boost 2G 3G 4G LTE 5G Data and Calls | FCC Approved",
+        "product_category": "Cell Phones & Accessories \u203a Accessories \u203a Signal Boosters",
+        "instruction_text": "i would like to buy cell phone signal booster which has high speed, and price lower than 190.00 dollars",
+        "attributes": [
+          "high speed"
+        ],
+        "price_upper": 190.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 86,
+        "question": "i would like to buy cell phone signal booster which has high speed, and price lower than 190.00 dollars"
+      },
+      {
+        "asin": "B07WTW4X4R",
+        "category": "electronics",
+        "query": "signal boosters",
+        "name": "Marg AC/DC Adapter for Zboost zBOOST ZB545 ZB545X ZB545M ZB545XW SOHO Xtreme ZB645 ZB645SL ZB645SL-CM SOHO Premium Dual Band Cell Phone Signal Booster Power Supply Charger",
+        "product_category": "Electronics \u203a Computers & Accessories",
+        "instruction_text": "i am looking for dual band computers, and price lower than 50.00 dollars",
+        "attributes": [
+          "dual band"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 87,
+        "question": "i am looking for dual band computers, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B07WTW4X4R",
+        "category": "electronics",
+        "query": "signal boosters",
+        "name": "Marg AC/DC Adapter for Zboost zBOOST ZB545 ZB545X ZB545M ZB545XW SOHO Xtreme ZB645 ZB645SL ZB645SL-CM SOHO Premium Dual Band Cell Phone Signal Booster Power Supply Charger",
+        "product_category": "Electronics \u203a Computers & Accessories",
+        "instruction_text": "i need dual band computer accessories, and price lower than 50.00 dollars",
+        "attributes": [
+          "dual band"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 88,
+        "question": "i need dual band computer accessories, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B0983BYQ5B",
+        "category": "garden",
+        "query": "kitchen islands",
+        "name": "Akeelighting Crystal Chandelier Lighting L47\" Rectangle 13 Light Modern Tree Branch Gold Raindrop Chandeliers Dining Room Kitchen Island Chandelier Large Hanging Ceiling Light Fixture",
+        "product_category": "Tools & Home Improvement \u203a Lighting & Ceiling Fans \u203a Ceiling Lights \u203a Chandeliers",
+        "instruction_text": "i am looking for height adjustable, mid century crystal chandelier lighting for living room, gold color, size 23.6\"",
+        "attributes": [
+          "height adjustable",
+          "mid century",
+          "living room"
+        ],
+        "price_upper": 1000000,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 89,
+        "question": "i am looking for height adjustable, mid century crystal chandelier lighting for living room, gold color, size 23.6\""
+      },
+      {
+        "asin": "B09NRFQLRJ",
+        "category": "electronics",
+        "query": "chargers",
+        "name": "Justtide Magnetic Wireless Charger, 15W Fast Wireless Charging Pad Ring Holder Compatible with Magsafe iPhone 13 12 Pro/Pro Max/Mini AirPods 3/2/Pro Foldable Kickstand",
+        "product_category": "Cell Phones & Accessories \u203a Accessories \u203a Chargers & Power Adapters \u203a Wireless Chargers",
+        "instruction_text": "i am looking for a wireless fast charger that goes with my iphone, and price lower than 50.00 dollars",
+        "attributes": [
+          "fast charging",
+          "wireless charging"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 90,
+        "question": "i am looking for a wireless fast charger that goes with my iphone, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B07K125KWT",
+        "category": "garden",
+        "query": "book cases",
+        "name": "Taylor + Logan 4 Shelf 65.75 Inch Bookcase with Drawer in Rustic Wood Grain Finish",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Home Office Furniture \u203a Home Office Desks",
+        "instruction_text": "i want a bookshelf for my living room, and price lower than 380.00 dollars",
+        "attributes": [
+          "living room"
+        ],
+        "price_upper": 380.0,
+        "goal_options": [
+          "bookshelf"
+        ],
+        "weight": 1,
+        "task_id": 91,
+        "question": "i want a bookshelf for my living room, and price lower than 380.00 dollars"
+      },
+      {
+        "asin": "B085VP8ZDB",
+        "category": "fashion",
+        "query": "men's slippers",
+        "name": "Tanleewa Townforst Men's Slippers Fashion Open Back Leather Slipper Lightweight",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Shoes \u203a Slippers",
+        "instruction_text": "i am looking for men's slippers of size 8 that are long lasting, and price lower than 50.00 dollars",
+        "attributes": [
+          "long lasting"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "8"
+        ],
+        "weight": 1,
+        "task_id": 92,
+        "question": "i am looking for men's slippers of size 8 that are long lasting, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B07TTC374M",
+        "category": "beauty",
+        "query": "hair coloring products",
+        "name": "[CLEARANCE]Moresoo Tape Hair Extensions Human Hair Blonde Color #14A Golden Blonde 14inch Invisible Double Sided Hair Extensions Tape in 40g/pack 20Pieces for Thin Hair Silky Straight Human Hair",
+        "product_category": "Beauty & Personal Care \u203a Hair Care \u203a Hair Extensions, Wigs & Accessories \u203a Hair Extensions",
+        "instruction_text": "i'm looking for double sided hair extensions for hair care accessories, and price lower than 50.00 dollars",
+        "attributes": [
+          "double sided",
+          "hair extensions"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "#ba2 | 60"
+        ],
+        "weight": 1,
+        "task_id": 93,
+        "question": "i'm looking for double sided hair extensions for hair care accessories, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B078VDBGJK",
+        "category": "fashion",
+        "query": "women's boots",
+        "name": "Sorel Women's Chelsea Boots",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Shoes \u203a Boots \u203a Ankle & Bootie",
+        "instruction_text": "i want to find a pair of purple women's boots in a size 8. the boots need to have rubber soles, and price lower than 140.00 dollars",
+        "attributes": [
+          "rubber sole"
+        ],
+        "price_upper": 140.0,
+        "goal_options": [
+          "purple sage",
+          "8"
+        ],
+        "weight": 1,
+        "task_id": 94,
+        "question": "i want to find a pair of purple women's boots in a size 8. the boots need to have rubber soles, and price lower than 140.00 dollars"
+      },
+      {
+        "asin": "B07GVB34N6",
+        "category": "garden",
+        "query": "decorative pillows",
+        "name": "ONGING Decorative Throw Pillow Case Red Heart Pillow with Black and White Stripes Cute Pillowcase Cushion Cover One Side Design Printed Square Size 16x16 inch",
+        "product_category": "Home & Kitchen \u203a Bedding \u203a Decorative Pillows, Inserts & Covers \u203a Throw Pillow Covers",
+        "instruction_text": "i am looking for  22\u201dx 22 double  sided throw pillow cases for my living room. choose multi 02 color, and price lower than 40.00 dollars",
+        "attributes": [
+          "double sided",
+          "living room"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "multi 02",
+          "22\"x22\""
+        ],
+        "weight": 1,
+        "task_id": 95,
+        "question": "i am looking for  22\u201dx 22 double  sided throw pillow cases for my living room. choose multi 02 color, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B07FTC477C",
+        "category": "garden",
+        "query": "bar stools",
+        "name": "Yongqiang 30\" Metal Bar Stools Set of 4 Bar Height Stools Kitchen Dining Bar Chairs High Back Barstools with Wooden Seat Industrial Matte Black",
+        "product_category": "Home & Kitchen \u203a Furniture \u203a Game & Recreation Room Furniture \u203a Home Bar Furniture \u203a Barstools",
+        "instruction_text": "i need the yongquiang 26\" set of 4 metal bar height stools in black.  i want the ones for a dining room, and price lower than 290.00 dollars",
+        "attributes": [
+          "dining room"
+        ],
+        "price_upper": 290.0,
+        "goal_options": [
+          "black",
+          "26 inch"
+        ],
+        "weight": 1,
+        "task_id": 96,
+        "question": "i need the yongquiang 26\" set of 4 metal bar height stools in black.  i want the ones for a dining room, and price lower than 290.00 dollars"
+      },
+      {
+        "asin": "B08LDY73WQ",
+        "category": "grocery",
+        "query": "snack crackers",
+        "name": "Tosh Cookies & Crackers Variety Pack | 4 Different Flavors | Includes 1 Multigrain Crackers 9.05 Oz, 1 Honey Crackers 9.52 Oz, 1 Chocolate 5.08 Oz and 1 Vanilla 5.08 Oz (Pack of4)",
+        "product_category": "Grocery & Gourmet Food \u203a Breads & Bakery \u203a Cookies",
+        "instruction_text": "i want some low fat orange mousse cookies, and price lower than 30.00 dollars",
+        "attributes": [
+          "low fat"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "orange mousse"
+        ],
+        "weight": 1,
+        "task_id": 97,
+        "question": "i want some low fat orange mousse cookies, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B004PFUQR8",
+        "category": "beauty",
+        "query": "lip care",
+        "name": "Hurraw! Mint Lip Balm: Organic, Certified Vegan, Cruelty and Gluten Free. Non-GMO, 100% Natural Ingredients. Bee, Shea, Soy and Palm Free. Made in USA",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Lip Care \u203a Balms & Moisturizers",
+        "instruction_text": "i'm looking for a certified organic lip balm that is plant based. please find a green tea flavor, and price lower than 40.00 dollars",
+        "attributes": [
+          "certified organic",
+          "plant based"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "green tea"
+        ],
+        "weight": 1,
+        "task_id": 98,
+        "question": "i'm looking for a certified organic lip balm that is plant based. please find a green tea flavor, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B083JJVQVX",
+        "category": "grocery",
+        "query": "popcorn",
+        "name": "Ocean\u2019s Balance Organic Kombu Flakes - Maine Coast Seaweed - Atlantic Ocean Sea Vegetables, Perfect for Keto Diet, Paleo Diet, Vegetarian Lifestyle or Vegan Diet - Gluten Free - 4oz Bag",
+        "product_category": "Grocery & Gourmet Food \u203a Pantry Staples \u203a Cooking & Baking \u203a Dried Seaweed & Nori",
+        "instruction_text": "find gluten-free nori flakes, and price lower than 40.00 dollars",
+        "attributes": [
+          "gluten free"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 99,
+        "question": "find gluten-free nori flakes, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B07KQ4X112",
+        "category": "beauty",
+        "query": "hair loss products",
+        "name": "Angmile 100% Natural Organic Beard Growth Oil Hair Loss Products Beard Care Leave-In Conditioner",
+        "product_category": "Beauty & Personal Care \u203a Shave & Hair Removal \u203a Men's \u203a Beard & Mustache Care \u203a Beard Conditioners & Oils",
+        "instruction_text": "i'd love some help finding some organic beard growth oil that can treat hair loss, and price lower than 40.00 dollars",
+        "attributes": [
+          "hair loss"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 100,
+        "question": "i'd love some help finding some organic beard growth oil that can treat hair loss, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B09T78TGBM",
+        "category": "electronics",
+        "query": "analog audio cables",
+        "name": "12V AC/DC Adapter Compatible with Nib Lorex FLIR ACCPWR12V500 RS R-K1200500DT Netgear DM200 Akai BT-500 BT-100 Mackie ProDX8 Teac TN-350 TN-550 XP-Pen A3 CPA4 Honor ADS-7.5N-12 12006Gz Power",
+        "product_category": "Electronics \u203a Power Accessories \u203a AC Adapters",
+        "instruction_text": "i am looking for a high speed 12v ac/dc adapter with output protection, and price lower than 130.00 dollars",
+        "attributes": [
+          "output protection",
+          "high speed"
+        ],
+        "price_upper": 130.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 101,
+        "question": "i am looking for a high speed 12v ac/dc adapter with output protection, and price lower than 130.00 dollars"
+      },
+      {
+        "asin": "B08ZSDCQ3N",
+        "category": "fashion",
+        "query": "women's coats, jackets & vests",
+        "name": "InterestPrint Women's All Over Print Padded Vest with Big Pocket and Zipper Funny Marine",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Women \u203a Clothing \u203a Coats, Jackets & Vests \u203a Vests",
+        "instruction_text": "i would like a 2xl multicolor vest that can be machine washed, and price lower than 60.00 dollars",
+        "attributes": [
+          "machine wash"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "multi8",
+          "xx-large"
+        ],
+        "weight": 1,
+        "task_id": 102,
+        "question": "i would like a 2xl multicolor vest that can be machine washed, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B08N424KPN",
+        "category": "grocery",
+        "query": "toothpicks",
+        "name": "Sweet One Strawberry 1st Cake Topper, Red Glitter Sweet One Birthday Cake Decorations for 1st Birthday, 1st Anniversary, Strawberry Theme Party Hawaiian Luau Tutti Frutti Party Summer Garden Party",
+        "product_category": "Grocery & Gourmet Food \u203a Pantry Staples \u203a Cooking & Baking \u203a Frosting, Icing & Decorations \u203a Cake Toppers",
+        "instruction_text": "i want to buy a birthday cake topper, and price lower than 40.00 dollars",
+        "attributes": [
+          "birthday cake"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 103,
+        "question": "i want to buy a birthday cake topper, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B00WFDKDIO",
+        "category": "grocery",
+        "query": "breads & bakery",
+        "name": "Nature's Bakery Gluten Free Fig Bars, Raspberry, Real Fruit, Vegan, Non-GMO, Snack bar, 1 box with 6 twin packs (6 twin packs)",
+        "product_category": "Grocery & Gourmet Food \u203a Snacks & Sweets \u203a Snack Foods \u203a Bars \u203a Fruit Bars",
+        "instruction_text": "i am looking for a gluten free non gmo fig bar packet of 7. and i choose the variety pack, and price lower than 40.00 dollars",
+        "attributes": [
+          "gluten free",
+          "non gmo"
+        ],
+        "price_upper": 40.0,
+        "goal_options": [
+          "variety pack",
+          "12 count (pack of 7)"
+        ],
+        "weight": 1,
+        "task_id": 104,
+        "question": "i am looking for a gluten free non gmo fig bar packet of 7. and i choose the variety pack, and price lower than 40.00 dollars"
+      },
+      {
+        "asin": "B01M7TXD6R",
+        "category": "beauty",
+        "query": "makeup remover",
+        "name": "Garnier SkinActive Micellar Makeup Remover Wipes, 25 ct.",
+        "product_category": "Beauty & Personal Care \u203a Skin Care \u203a Face \u203a Cleansers \u203a Cloths & Towelettes",
+        "instruction_text": "i am looking for a 25 pack of micellar makeup remover wipes that are sulfate free, and price lower than 30.00 dollars",
+        "attributes": [
+          "sulfate free"
+        ],
+        "price_upper": 30.0,
+        "goal_options": [
+          "25 count (pack of 2)"
+        ],
+        "weight": 1,
+        "task_id": 105,
+        "question": "i am looking for a 25 pack of micellar makeup remover wipes that are sulfate free, and price lower than 30.00 dollars"
+      },
+      {
+        "asin": "B005GP9ECE",
+        "category": "fashion",
+        "query": "men's sandals",
+        "name": "Billabong Men's Offshore Impact Sandal Flip-Flop",
+        "product_category": "Clothing, Shoes & Jewelry \u203a Men \u203a Shoes \u203a Sandals",
+        "instruction_text": "i m looking for a 8 no. vinyl acetate man's sandals, and price lower than 60.00 dollars",
+        "attributes": [
+          "vinyl acetate"
+        ],
+        "price_upper": 60.0,
+        "goal_options": [
+          "8"
+        ],
+        "weight": 1,
+        "task_id": 106,
+        "question": "i m looking for a 8 no. vinyl acetate man's sandals, and price lower than 60.00 dollars"
+      },
+      {
+        "asin": "B07J3Y6LVY",
+        "category": "electronics",
+        "query": "lenses",
+        "name": "Superyong for iPhone 11 Pro Max Case 3D Glitter Sparkle Bling Case for Women Girls Rhinestone Diamond Cute Luxury Fashion Gems Case Cover+3 Pack Camera Lens Protector for iPhone 11 Pro Max 6.5 Inch",
+        "product_category": "Cell Phones & Accessories \u203a Cases, Holsters & Sleeves \u203a Basic Cases",
+        "instruction_text": "i'm looking for a tempered glass cell phone case, and price lower than 50.00 dollars",
+        "attributes": [
+          "tempered glass"
+        ],
+        "price_upper": 50.0,
+        "goal_options": [
+          "crystal ab-12 pro max"
+        ],
+        "weight": 1,
+        "task_id": 107,
+        "question": "i'm looking for a tempered glass cell phone case, and price lower than 50.00 dollars"
+      },
+      {
+        "asin": "B093VQSY12",
+        "category": "electronics",
+        "query": "televisions",
+        "name": "QIMO UHD Smart TV,LED Widescreen, Built-in DVD Player with HDMI, USB, High Resolution and Digital Noise Reduction, 24in",
+        "product_category": "Electronics \u203a Television & Video \u203a Televisions \u203a LED & LCD TVs",
+        "instruction_text": "i am looking for a high definition 24 inch tv, and price lower than 470.00 dollars",
+        "attributes": [
+          "high definition"
+        ],
+        "price_upper": 470.0,
+        "goal_options": [
+          "24in"
+        ],
+        "weight": 1,
+        "task_id": 108,
+        "question": "i am looking for a high definition 24 inch tv, and price lower than 470.00 dollars"
+      },
+      {
+        "asin": "B096NJ89C2",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "Abstract Stained Glass Window Cling 2 PCS Set Multicolor Excellent Quality 3D Static Cling Window Film 35.4\" x 94.4\" x 2 Pcs",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Window Stickers & Films \u203a Window Films",
+        "instruction_text": "i'm looking for  home decor products for home accessories, and price lower than 120.00 dollars",
+        "attributes": [
+          "eco friendly",
+          "easy install"
+        ],
+        "price_upper": 120.0,
+        "goal_options": [],
+        "weight": 1,
+        "task_id": 109,
+        "question": "i'm looking for  home decor products for home accessories, and price lower than 120.00 dollars"
+      },
+      {
+        "asin": "B096NJ89C2",
+        "category": "garden",
+        "query": "window coverings",
+        "name": "Abstract Stained Glass Window Cling 2 PCS Set Multicolor Excellent Quality 3D Static Cling Window Film 35.4\" x 94.4\" x 2 Pcs",
+        "product_category": "Home & Kitchen \u203a Home D\u00e9cor Products \u203a Window Treatments \u203a Window Stickers & Films \u203a Window Films",
+        "instruction_text": "i am looking for multi colored glass window film that is eco friendly. the installation process should be easy as well, and price lower than 130.00 dollars",
+        "attributes": [
+          "eco friendly",
+          "easy install"
+        ],
+        "price_upper": 130.0,
+        "goal_options": [
+          "multi-07022"
+        ],
+        "weight": 1,
+        "task_id": 110,
+        "question": "i am looking for multi colored glass window film that is eco friendly. the installation process should be easy as well, and price lower than 130.00 dollars"
+      }
+]
